@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Enemy Search (Source/EnemySearch.cs): a drafted fairy with it on fights the enemies in reach, else
+       heads for the nearest one. Same place in the tree as the Search and Destroy mod's node; with that mod loaded this one
+       never applies (the toggle drives that mod's own setting). -->
+  <Operation Class="PatchOperationInsert">
+    <xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot[@Class="ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalColonist"]</xpath>
+    <value>
+      <li Class="FairyGenes.ThinkNode_ConditionalEnemySearch">
+        <subNodes>
+          <li Class="ThinkNode_Priority">
+            <subNodes>
+              <li Class="FairyGenes.JobGiver_EnemySearchFight">
+                <targetAcquireRadius>200</targetAcquireRadius>
+                <targetKeepRadius>72</targetKeepRadius>
+              </li>
+              <li Class="FairyGenes.JobGiver_EnemySearchApproach"/>
+            </subNodes>
+          </li>
+        </subNodes>
+      </li>
+    </value>
+  </Operation>
+</Patch>

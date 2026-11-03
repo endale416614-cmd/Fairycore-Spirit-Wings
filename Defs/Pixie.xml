@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PawnRenderNodeTagDef><defName>FG_PixieAura</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>FG_PixieHeadAura</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>FG_PixieSparkle</defName></PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef><defName>FG_PixieEgg</defName></PawnRenderNodeTagDef>
+  <GeneDef>
+    <defName>FG_Pixie</defName>
+    <label>pixie</label>
+    <description>What are you doing at the end of the world? Are you busy? Will you save us?\n\nA small spark of Venenum that keeps its bearer the size of a child for life and lets them dart through the sky on radiant wings.\n\n&lt;color=#E6E64C&gt;Effects:&lt;/color&gt;\n - Flight\n - Increased evasion\n - Increased psychic sensitivity\n - Fire immunity\n\n&lt;color=#E6E64C&gt;Gives abilities:&lt;/color&gt;\n - Flutter Dash</description>
+    <iconPath>FairyGenes/UI/Gene_LesserVenenum</iconPath>
+    <geneClass>FairyGenes.Gene_Pixie</geneClass>
+    <displayCategory>FG_Wings</displayCategory>
+    <displayOrderInCategory>120</displayOrderInCategory>
+    <biostatCpx>5</biostatCpx>
+    <biostatMet>0</biostatMet>
+    <exclusionTags><li>FG_Venenum</li></exclusionTags>
+    <descriptionHyperlinks>
+      <AbilityDef>FG_FairyFlutter</AbilityDef>
+      <HediffDef>FG_PixieFlight</HediffDef>
+      <HediffDef>FG_PixieMetamorphosis</HediffDef>
+    </descriptionHyperlinks>
+    <renderNodeProperties>
+      <li>
+        <debugLabel>Pixie aura</debugLabel>
+        <nodeClass>FairyGenes.PawnRenderNode_PixieAura</nodeClass>
+        <workerClass>FairyGenes.PawnRenderNodeWorker_PixieAura</workerClass>
+        <tagDef>FG_PixieAura</tagDef>
+        <shaderTypeDef>MoteGlow</shaderTypeDef>
+        <drawSize>(1.08,1.08)</drawSize>
+        <parentTagDef>Body</parentTagDef>
+        <baseLayer>-20</baseLayer>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+      </li>
+      <li>
+        <debugLabel>Pixie head aura</debugLabel>
+        <nodeClass>FairyGenes.PawnRenderNode_PixieHeadAura</nodeClass>
+        <workerClass>FairyGenes.PawnRenderNodeWorker_PixieAura</workerClass>
+        <tagDef>FG_PixieHeadAura</tagDef>
+        <shaderTypeDef>MoteGlow</shaderTypeDef>
+        <drawSize>(1.04,1.04)</drawSize>
+        <parentTagDef>Head</parentTagDef>
+        <baseLayer>-20</baseLayer>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+      </li>
+      <li>
+        <debugLabel>Pixie work glow</debugLabel>
+        <nodeClass>FairyGenes.PawnRenderNode_PixieSparkle</nodeClass>
+        <workerClass>FairyGenes.PawnRenderNodeWorker_PixieSparkle</workerClass>
+        <tagDef>FG_PixieSparkle</tagDef>
+        <texPath>FairyGenes/Effect/Sparkle</texPath>
+        <shaderTypeDef>MoteGlow</shaderTypeDef>
+        <drawSize>(0.32,0.32)</drawSize>
+        <parentTagDef>Body</parentTagDef>
+        <baseLayer>20</baseLayer>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+      </li>
+      <li>
+        <debugLabel>Pixie metamorphosis orb</debugLabel>
+        <nodeClass>FairyGenes.PawnRenderNode_PixieEgg</nodeClass>
+        <workerClass>FairyGenes.PawnRenderNodeWorker_PixieEgg</workerClass>
+        <tagDef>FG_PixieEgg</tagDef>
+        <texPath>FairyGenes/Effect/PixieMetamorphosis</texPath>
+        <shaderTypeDef>Transparent</shaderTypeDef>
+        <drawSize>(2.0,2.0)</drawSize>
+        <parentTagDef>Root</parentTagDef>
+        <baseLayer>-30</baseLayer>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <HediffDef>
+    <defName>FG_PixieFlight</defName>
+    <hediffClass>FairyGenes.Hediff_PixieFlight</hediffClass>
+    <label>pixie flight</label>
+    <description>A small soul manifested as glowing wings of psychic energy, carrying its bearer through the air at the cost of food and rest.</description>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <hungerRateFactor>1.25</hungerRateFactor>
+        <statFactors>
+          <RestFallRateFactor>1.25</RestFallRateFactor>
+          <Flammability>0</Flammability>
+        </statFactors>
+        <statOffsets><PsychicSensitivity>2</PsychicSensitivity></statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>FG_PixieMetamorphosis</defName>
+    <label>pixie metamorphosis</label>
+    <description>Sleeping inside a faintly glowing orb, the bearer is being remade into a pixie.</description>
+    <hediffClass>FairyGenes.Hediff_PixieMetamorphosis</hediffClass>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <hungerRateFactor>0</hungerRateFactor>
+        <statFactors><RestFallRateFactor>0</RestFallRateFactor></statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

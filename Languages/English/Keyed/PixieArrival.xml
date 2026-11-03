@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <FG_LetterTextPixieArrives>{BASETEXT}\n\nThe slavers hunting [asker_nameDef] will arrive soon.</FG_LetterTextPixieArrives>
+  <FG_LetterLabelPixieSlavers>{BASELABEL}: Slavers</FG_LetterLabelPixieSlavers>
+  <FG_LetterTextPixieSlavers>{BASETEXT}\n\nThese are the slavers who were hunting [../asker_nameDef].</FG_LetterTextPixieSlavers>
+</LanguageData>

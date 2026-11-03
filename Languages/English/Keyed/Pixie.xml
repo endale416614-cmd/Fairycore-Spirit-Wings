@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <FG.PixieFlightDesc>While active, gain flight, speed and psychic prowess.</FG.PixieFlightDesc>
+  <FG.PixieAutoModeAlways>always, while awake, even when hungry or tired</FG.PixieAutoModeAlways>
+  <FG.PixieAutoModeAlwaysLand>always, while awake; the wings fold when food or rest runs low and come out again once both recover</FG.PixieAutoModeAlwaysLand>
+  <FG.PixieNeedsLow>{PAWN_nameDef} is too tired or too hungry to fly. Food and sleep will bring the wings back.</FG.PixieNeedsLow>
+  <FG.AbilityDisabled_PixieFlight>{PAWN_nameDef}'s wings are not out.</FG.AbilityDisabled_PixieFlight>
+  <FG.PixieWeaponRestricted>{PAWN_nameDef} is too small for anything but a wand or a pistol.</FG.PixieWeaponRestricted>
+  <FG.PixieWingStaminaDesc>How long {PAWN_nameDef}'s wings can carry {PAWN_objective}. Flying wears on {PAWN_possessive} food and rest; when either runs low, the wings fold. Food and sleep bring them back.</FG.PixieWingStaminaDesc>
+</LanguageData>

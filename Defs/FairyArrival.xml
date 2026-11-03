@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Fairy arrival quest: a monarch fairy and two court fairies flee slavers and ask to join.
+       Patterned on VRE Phytokin's intro quest. Offered once per game by GameComponent_FairyArrival
+       (Source/FairyArrival.cs), FireAfterDays after settling, on every storyteller; baseChance 0 keeps it out of the
+       random pool (Dev Mode can still execute the incident). -->
+
+  <IncidentDef ParentName="GiveQuestBase">
+    <defName>FG_GiveQuest_FairyArrival</defName>
+    <label>fleeing fairies</label>
+    <questScriptDef>FG_FairyArrival</questScriptDef>
+    <baseChance>0</baseChance>
+  </IncidentDef>
+
+  <QuestScriptDef>
+    <defName>FG_FairyArrival</defName>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <expireDaysRange>3</expireDaysRange>
+    <isRootSpecial>true</isRootSpecial>
+    <rootIncreasesPopulation>true</rootIncreasesPopulation>
+    <defaultCharity>true</defaultCharity>
+    <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_HospitalityRefugees</successHistoryEvent>
+    <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_HospitalityRefugees</failedOrExpiredHistoryEvent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Wings on the Run</li>
+        <li>questName->The Fleeing Fairies</li>
+        <li>questName->Three Fairies Seek Shelter</li>
+        <li>questName->[asker_nameDef] and the Slavers</li>
+        <li>questName->The Monarch's Flight</li>
+        <li>questName->Sanctuary for [asker_nameDef]</li>
+        <li>questName->Hunted Wings</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[fairyStory]\n\n[fairyLore]\n\nIf you accept, the three fairies will arrive right away, hungry and exhausted, and the slavers of [enemyFaction_name] will follow soon after. The hunting party is made up of:\n\n[raid/raidPawnKinds]</li>
+
+        <li>fairyLore->Fairies are among the rarest beings in the known worlds, and where they come from is a mystery, even to the fairies themselves. Despite the name, a monarch fairy is not royalty. "Monarch" names [asker_possessive] kind the way it names a butterfly, not a crown.</li>
+
+        <!-- 1. The call for help -->
+        <li>fairyStory->A faint, breathless voice crackles over the comms. [asker_nameFull], a monarch fairy, is hiding nearby with two court fairies, [court1_nameDef] and [court2_nameDef]. Slavers from [enemyFaction_name] have been tracking them for days, and the three have nothing left to eat and no strength left to run.\n\n"Please," [asker_nameDef] whispers. "Take us in at [map_definite]. Keep us safe, treat us kindly, and we will serve your colony with all our hearts."</li>
+
+        <!-- 2. The hunt -->
+        <li>fairyStory->For six days, [enemyFaction_name] has hunted three fairies across the wilds like animals. [asker_nameFull], a monarch fairy, and the court fairies [court1_nameDef] and [court2_nameDef] have doubled back, hidden in hollows, and flown until their wings ached, but the slavers never lose the trail for long.\n\nOut of tricks and out of food, [asker_nameDef] has turned toward [map_definite] as a last hope. If you shelter them, [asker_pronoun] promises that the three of them will serve your colony faithfully and gladly, with all their hearts, for as long as they are treated well.</li>
+
+        <!-- 3. Broken out of the cage -->
+        <li>fairyStory->Three fairies have escaped from a slaver caravan of [enemyFaction_name]. [asker_nameFull], a monarch fairy, picked the lock of their cage with a sliver of bone, and the two court fairies, [court1_nameDef] and [court2_nameDef], carried [asker_objective] when [asker_possessive] wings gave out. They have been running ever since.\n\nThe chains are gone, but the hunger and the exhaustion are not, and the slavers are close behind. [asker_nameDef] asks for shelter at [map_definite]. In return, [asker_pronoun] offers the only thing the three of them still own, their loyalty, freely given to anyone who treats them well.</li>
+
+        <!-- 4. A price on their heads -->
+        <li>fairyStory->Word travels fast among slavers. [enemyFaction_name] has learned that a monarch fairy is wandering the region, and a living fairy is worth more than a whole caravan of silver, because almost no one has ever seen one. [asker_nameFull] and the two court fairies who guard [asker_objective], [court1_nameDef] and [court2_nameDef], have fled the hunters for a week, eating whatever they could find and sleeping in turns.\n\nNow they have nothing left, and yours is the only settlement nearby. "We are not treasures," [asker_nameDef] says. "We are people. Treat us as people, and we will serve your colony with all our hearts."</li>
+
+        <!-- 5. The court fairies' devotion -->
+        <li>fairyStory->[court1_nameFull] and [court2_nameFull] are court fairies, and they swore long ago never to leave the side of [asker_nameFull], the monarch fairy they travel with. That vow has nearly cost them everything. Slavers from [enemyFaction_name] have chased the three across the wilds, and the two court fairies have given [asker_nameDef] their share of the food again and again, until there was none left for anyone.\n\n[asker_nameDef] is calling you now, for their sake more than [asker_possessive] own. If you take them in at [map_definite] and treat them well, all three promise to serve your colony with all their hearts.</li>
+
+        <!-- 6. Hunger and exhaustion -->
+        <li>fairyStory->Three fairies are calling from nearby, and their voices are barely steady. [asker_nameFull], a monarch fairy, and the court fairies [court1_nameDef] and [court2_nameDef] ate their last berries two days ago and have not slept properly since. Every time they stop to rest, the slavers of [enemyFaction_name] catch up.\n\n"We can't fly much farther," [asker_nameDef] admits. "Give us food, a warm place to sleep, and a little kindness, and we will repay you with our work, our courage, and everything we have."</li>
+
+        <!-- 7. A story come true -->
+        <li>fairyStory->There are stories, told on long voyages between the stars, of winged people who appear on forgotten worlds and vanish again before anyone learns where they came from. Most people think the stories are only stories. Today, one of them is calling for help. [asker_nameFull] is a monarch fairy, and [asker_pronoun] travels with two court fairies, [court1_nameDef] and [court2_nameDef].\n\nThe legends never mentioned how tired fairies can get, or how hungry, or how relentlessly the slavers of [enemyFaction_name] would hunt them. [asker_nameDef] asks for refuge at [map_definite], and promises that if your colony treats them well, all three will serve it with all their hearts.</li>
+
+        <!-- 8. A fair bargain -->
+        <li>fairyStory->[asker_nameFull] does not beg. Instead, the monarch fairy makes you an offer. Slavers from [enemyFaction_name] have hunted [asker_objective] and [asker_possessive] two court fairies, [court1_nameDef] and [court2_nameDef], until their food ran out and their wings could barely carry them.\n\nShelter them at [map_definite], drive off the hunters, and treat them well, and the three of them will serve your colony with all their hearts, for as long as you keep your side of the promise. It is a simple bargain, and the fairies mean every word of it.</li>
+
+        <!-- 9. Following the colony's lights -->
+        <li>fairyStory->For three nights, [asker_nameFull] has followed the lights of your colony. The monarch fairy and [asker_possessive] two court fairies, [court1_nameDef] and [court2_nameDef], escaped the slavers of [enemyFaction_name] with nothing but the clothes they wore, and they have flown toward the only warm glow on the horizon ever since.\n\nNow they are almost at your door, starving and too tired to fly another mile, with the slavers only hours behind. [asker_nameDef] calls out to you. If you let them in, the three of them will never give you a reason to regret it, and they will serve your colony with all their hearts for as long as they are treated well.</li>
+
+        <!-- 10. Trusting once more -->
+        <li>fairyStory->[asker_nameFull] has trusted strangers before. The last ones sold [asker_objective] and [asker_possessive] court fairies, [court1_nameDef] and [court2_nameDef], to [enemyFaction_name], and it took the three of them months to escape. Now the slavers want them back, and the fairies are out of food, out of strength, and out of places to hide.\n\nSo [asker_nameDef] is choosing to trust one more time. "Take us in at [map_definite]," the monarch fairy says. "Be kind to us, and we will give your colony our whole hearts. We will work, and fight, and care for your people as if they were our own."</li>
+      </rulesStrings>
+    </questDescriptionRules>
+
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetMap" />
+        <li Class="QuestNode_GetWalkInSpot" />
+
+        <li Class="QuestNode_Set">
+          <name>raidPoints</name>
+          <value>$points</value>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+
+        <!-- The slavers: a permanent enemy faction of people, no insects or mechanoids -->
+        <li Class="FairyGenes.QuestNode_GetSlaverFaction">
+          <storeAs>enemyFaction</storeAs>
+        </li>
+
+        <!-- The monarch fairy (asker) and her court fairies (court1, court2) -->
+        <li Class="FairyGenes.QuestNode_GenerateFleeingFairies">
+          <kindDef>Colonist</kindDef>
+          <storeAs>asker</storeAs>
+          <courtStoreAsPrefix>court</courtStoreAsPrefix>
+          <addToList>fairies</addToList>
+        </li>
+
+        <li Class="QuestNode_PawnsArrive">
+          <pawns>$fairies</pawns>
+          <walkInSpot>$walkInSpot</walkInSpot>
+          <joinPlayer>true</joinPlayer>
+          <customLetterText TKey="FG_LetterTextFairiesArrive">{BASETEXT}\n\nThe slavers hunting [asker_nameDef], [court1_nameDef] and [court2_nameDef] will arrive soon.</customLetterText>
+          <isSingleReward>true</isSingleReward>
+          <rewardDetailsHidden>true</rewardDetailsHidden>
+        </li>
+
+        <!-- The slavers' raid -->
+        <li Class="QuestNode_Set">
+          <name>raidDelayTicks</name>
+          <value>$(roundToTicksRough(randInt(1800, 2400)))</value>
+        </li>
+        <li Class="QuestNode_Delay">
+          <delayTicks>$raidDelayTicks</delayTicks>
+          <node Class="QuestNode_SubScript">
+            <def>Util_Raid</def>
+            <prefix>raid</prefix>
+            <parms>
+              <inSignal>$inSignal</inSignal>
+              <map>$map</map>
+              <enemyFaction>$enemyFaction</enemyFaction>
+              <points>$raidPoints</points>
+              <walkInSpot>$walkInSpot</walkInSpot>
+              <customLetterLabel TKey="FG_LetterLabelSlavers">{BASELABEL}: Slavers</customLetterLabel>
+              <customLetterText TKey="FG_LetterTextSlavers">{BASETEXT}\n\nThese are the slavers who were hunting [../asker_nameDef] and the court fairies.</customLetterText>
+            </parms>
+          </node>
+        </li>
+
+        <!-- End a few seconds after the raid arrives -->
+        <li Class="QuestNode_Delay">
+          <delayTicks>$($raidDelayTicks+600)</delayTicks>
+          <node Class="QuestNode_End">
+            <outcome>Success</outcome>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

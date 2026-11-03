@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef ParentName="GiveQuestBase">
+    <defName>FG_GiveQuest_PixieArrival</defName>
+    <label>a pixie seeks shelter</label>
+    <questScriptDef>FG_PixieArrival</questScriptDef>
+    <baseChance>0</baseChance>
+  </IncidentDef>
+
+  <QuestScriptDef>
+    <defName>FG_PixieArrival</defName>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <expireDaysRange>3</expireDaysRange>
+    <isRootSpecial>true</isRootSpecial>
+    <rootIncreasesPopulation>true</rootIncreasesPopulation>
+    <defaultCharity>true</defaultCharity>
+    <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_HospitalityRefugees</successHistoryEvent>
+    <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_HospitalityRefugees</failedOrExpiredHistoryEvent>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->A Pixie's Last Hope</li>
+        <li>questName->A Small Voice in the Dark</li>
+        <li>questName->Shelter for [asker_nameDef]</li>
+        <li>questName->Little Wings on the Run</li>
+        <li>questName->[asker_nameDef] and the Slavers</li>
+        <li>questName->Sanctuary for [asker_nameDef]</li>
+        <li>questName->The Smallest Fairy</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[pixieStory]\n\n[pixieLore]\n\nIf you accept, [asker_nameDef] will arrive right away, hungry and exhausted, and the slavers of [enemyFaction_name] will follow soon after. The hunting party is made up of:\n\n[raid/raidPawnKinds]</li>
+
+        <li>pixieLore->Fairies are among the rarest beings in the known worlds, and pixies are the smallest of them, no bigger than a child all their lives and the quickest of all fairies in the air. Where they come from is a mystery, even to the pixies themselves.</li>
+
+        <li>pixieStory->A faint, breathless voice crackles over the comms. [asker_nameFull], a pixie, is hiding nearby. Slavers from [enemyFaction_name] have been tracking [asker_objective] for days, and [asker_pronoun] has nothing left to eat and no strength left to fly.\n\n"Please," [asker_nameDef] whispers. "Take me in at [map_definite]. Keep me safe, treat me kindly, and I will serve your colony with all my heart."</li>
+        <li>pixieStory->For six days, [enemyFaction_name] has hunted a pixie across the wilds like an animal. [asker_nameFull] has hidden in hollows and under roots, and flown until [asker_possessive] small wings ached, but the slavers never lose the trail for long.\n\nOut of tricks and out of food, [asker_nameDef] has turned toward [map_definite] as a last hope. If you shelter [asker_objective], [asker_pronoun] promises to serve your colony faithfully and gladly, for as long as [asker_pronoun] is treated kindly.</li>
+        <li>pixieStory->[asker_nameFull], a pixie, has escaped from a slaver caravan of [enemyFaction_name]. [asker_nameDef] was small enough to slip between the bars of the cage while the guards slept, and [asker_pronoun] has been running ever since.\n\nThe bars are gone, but the hunger and the exhaustion are not, and the slavers are close behind. [asker_nameDef] asks for shelter at [map_definite]. In return, [asker_pronoun] offers the only thing [asker_pronoun] still owns, [asker_possessive] loyalty.</li>
+        <li>pixieStory->Word travels fast among slavers. [enemyFaction_name] has learned that a pixie is wandering the region, and a living fairy is worth more than a whole caravan of silver, because almost no one has ever seen one. [asker_nameFull] has fled the hunters for a week, eating whatever [asker_pronoun] could find and sleeping in snatches.\n\nNow [asker_pronoun] has nothing left, and yours is the only settlement nearby. "I am not a treasure," [asker_nameDef] says. "I am a person. Treat me as one, and I will give your colony everything I have."</li>
+        <li>pixieStory->A small voice is calling from nearby, barely steady. [asker_nameFull], a pixie, ate [asker_possessive] last berries two days ago and has not slept properly since. Every time [asker_pronoun] stops to rest, the slavers of [enemyFaction_name] catch up.\n\n"I can't fly much farther," [asker_nameDef] admits. "Give me food, a warm place to sleep, and a little kindness, and I will repay you with my work, my courage, and everything I have."</li>
+        <li>pixieStory->For three nights, [asker_nameFull] has followed the lights of your colony. The pixie escaped the slavers of [enemyFaction_name] with nothing but the clothes [asker_pronoun] wore, and [asker_pronoun] has flown toward the only warm glow on the horizon ever since.\n\nNow [asker_pronoun] is almost at your door, starving and too tired to fly another mile, with the slavers only hours behind. [asker_nameDef] calls out to you. If you let [asker_objective] in, [asker_pronoun] will never give you a reason to regret it.</li>
+        <li>pixieStory->[asker_nameFull] has trusted strangers before. The last ones sold the little pixie to [enemyFaction_name], and it took [asker_objective] months to escape. Now the slavers want [asker_objective] back, and [asker_pronoun] is out of food, out of strength, and out of places to hide.\n\nSo [asker_nameDef] is choosing to trust one more time. "Take me in at [map_definite]," the pixie says. "Be kind to me, and I will give your colony my whole heart."</li>
+      </rulesStrings>
+    </questDescriptionRules>
+
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_GetMap" />
+        <li Class="QuestNode_GetWalkInSpot" />
+
+        <li Class="QuestNode_Set">
+          <name>raidPoints</name>
+          <value>$points</value>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+
+        <!-- a permanent enemy faction of people: no insects or mechanoids -->
+        <li Class="FairyGenes.QuestNode_GetSlaverFaction">
+          <storeAs>enemyFaction</storeAs>
+        </li>
+
+        <li Class="FairyGenes.QuestNode_GenerateFleeingPixie">
+          <kindDef>Colonist</kindDef>
+          <storeAs>asker</storeAs>
+          <addToList>pixies</addToList>
+          <inSignal>$inSignal</inSignal>
+        </li>
+
+        <li Class="QuestNode_PawnsArrive">
+          <pawns>$pixies</pawns>
+          <walkInSpot>$walkInSpot</walkInSpot>
+          <joinPlayer>true</joinPlayer>
+          <customLetterText TKey="FG_LetterTextPixieArrives">{BASETEXT}\n\nThe slavers hunting [asker_nameDef] will arrive soon.</customLetterText>
+          <isSingleReward>true</isSingleReward>
+          <rewardDetailsHidden>true</rewardDetailsHidden>
+        </li>
+
+        <li Class="QuestNode_Set">
+          <name>raidDelayTicks</name>
+          <value>$(roundToTicksRough(randInt(1800, 2400)))</value>
+        </li>
+        <li Class="QuestNode_Delay">
+          <delayTicks>$raidDelayTicks</delayTicks>
+          <node Class="QuestNode_SubScript">
+            <def>Util_Raid</def>
+            <prefix>raid</prefix>
+            <parms>
+              <inSignal>$inSignal</inSignal>
+              <map>$map</map>
+              <enemyFaction>$enemyFaction</enemyFaction>
+              <points>$raidPoints</points>
+              <walkInSpot>$walkInSpot</walkInSpot>
+              <customLetterLabel TKey="FG_LetterLabelPixieSlavers">{BASELABEL}: Slavers</customLetterLabel>
+              <customLetterText TKey="FG_LetterTextPixieSlavers">{BASETEXT}\n\nThese are the slavers who were hunting [../asker_nameDef].</customLetterText>
+            </parms>
+          </node>
+        </li>
+
+        <li Class="QuestNode_Delay">
+          <delayTicks>$($raidDelayTicks+600)</delayTicks>
+          <node Class="QuestNode_End">
+            <outcome>Success</outcome>
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+</Defs>

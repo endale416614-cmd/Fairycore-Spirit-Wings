@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Venenum -->
+  <FG.Venenum>Venenum</FG.Venenum>
+  <FG.VenenumDesc>While active, gain flight, combat and psychic prowess.</FG.VenenumDesc>
+  <FG.VenenumHeatGain>Neural heat gain: {0}/s</FG.VenenumHeatGain>
+  <FG.VenenumGizmoHeat>H: {0}/s</FG.VenenumGizmoHeat>
+  <FG.VenenumGizmoDelirium>D: {0}</FG.VenenumGizmoDelirium>
+  <FG.FlutterGizmoPsyfocus>P: {0}</FG.FlutterGizmoPsyfocus>
+  <FG.FlutterPsyfocusCost>Psyfocus cost: {0}</FG.FlutterPsyfocusCost>
+  <FG.FlutterFoodRestCost>Food cost: {0}\nRest cost: {1}</FG.FlutterFoodRestCost>
+  <FG.VenenumHeat>Neural heat: {0} / {1}</FG.VenenumHeat>
+  <FG.VenenumDeliriumLine>Psychic delirium: {0}</FG.VenenumDeliriumLine>
+  <FG.VenenumOverLimitWarning>Burnt out. Pushing further will cost more than heat.</FG.VenenumOverLimitWarning>
+  <FG.VenenumBeyondLimitConfirm>{PAWN_nameDef}'s wings have burnt out, and the heat has not faded.\n\nCalling on Venenum now means going past what a mind can bear. Something will start to break, and it will not stop breaking.\n\nCall on it anyway?</FG.VenenumBeyondLimitConfirm>
+  <FG.VenenumBurnedOut>{PAWN_nameDef}'s wings have burnt out. Let the heat fade before asking for more.</FG.VenenumBurnedOut>
+  <FG.VenenumAutoSkipped>{PAWN_nameDef}'s wings are still burnt out and would not answer the call to arms.</FG.VenenumAutoSkipped>
+  <FG.VenenumRefusalLockHeat>{PAWN_nameDef} turned away from Fairy's Gate and will not call on Venenum until the heat has faded.</FG.VenenumRefusalLockHeat>
+  <FG.VenenumRefusalLockDelirium>{PAWN_nameDef} turned away from Fairy's Gate and will not call on Venenum until {PAWN_possessive} mind is whole again.</FG.VenenumRefusalLockDelirium>
+  <FG.ForceWarningTitle>Forcing Venenum: {PAWN_nameDef}</FG.ForceWarningTitle>
+  <FG.ForceWarning>This cannot be ordered. {PAWN_nameDef} has to want it, and {PAWN_possessive} heart decides.\n\nIf {PAWN_pronoun} refuses, it will be a long while before {PAWN_pronoun} lets anyone ask again.</FG.ForceWarning>
+  <FG.VenenumForceRefused>{PAWN_nameDef} will not push past the limit again for now. Ask again in {1}.</FG.VenenumForceRefused>
+  <FG.VenenumSubduedLock>{PAWN_nameDef} was brought down out of the frenzy. The wings stay quiet; waking them now would only wake the madness.</FG.VenenumSubduedLock>
+  <FG.DeliriumSubdued>{PAWN_nameDef} has been brought down, and the frenzy breaks. The madness is only sleeping. Kind words and quiet hours may yet soothe it.</FG.DeliriumSubdued>
+  <FG.AbilityDisabled_DeliriumBelow>{PAWN_nameDef}'s psychic delirium is below {1}.</FG.AbilityDisabled_DeliriumBelow>
+  <FG.CostPsyfocus>Psyfocus cost: {0}</FG.CostPsyfocus>
+  <FG.CostHeat>Neural heat: +{0}</FG.CostHeat>
+  <FG.CostDelirium>Psychic delirium: +{0}</FG.CostDelirium>
+  <FG.GizmoHeat>H: +{0}</FG.GizmoHeat>
+  <FG.GizmoDelirium>D: +{0}</FG.GizmoDelirium>
+  <FG.GizmoFood>F: {0}</FG.GizmoFood>
+  <FG.GizmoRest>R: {0}</FG.GizmoRest>
+  <FG.GizmoFree>Free</FG.GizmoFree>
+  <FG.WingStamina>Wing stamina</FG.WingStamina>
+  <FG.WingStaminaDesc>How long {PAWN_nameDef}'s wings can carry {PAWN_objective}. A full bar is two minutes in the air. Sleep fills it; awake, it comes back slowly. Flying on with it empty wears hard on {PAWN_possessive} rest and food.</FG.WingStaminaDesc>
+  <FG.WingStaminaSpentTitle>Wing stamina: {PAWN_nameDef}</FG.WingStaminaSpentTitle>
+  <FG.WingStaminaSpent>{PAWN_nameDef}'s wings are spent.\n\nKeep flying, and every moment in the air will quickly drain {PAWN_possessive} rest and food. Push too far, and {PAWN_pronoun} will fall from the sky and get hurt.\n\nLand, and the wings can rest.</FG.WingStaminaSpent>
+  <FG.WingStaminaKeepFlying>Keep flying</FG.WingStaminaKeepFlying>
+  <FG.WingStaminaLand>Land</FG.WingStaminaLand>
+  <FG.WingStaminaFell>{PAWN_nameDef}'s wings gave out after too long in the air, and {PAWN_pronoun} fell from the sky.</FG.WingStaminaFell>
+  <FG.WingStaminaExhausted>{PAWN_nameDef} is too tired or too hungry to fly. Sleep and food will bring the wings back.</FG.WingStaminaExhausted>
+  <FG.EnemySearch>Enemy search</FG.EnemySearch>
+  <FG.EnemySearchDesc>Search the area for enemies and attack them, in melee or from range with a ranged weapon. Ends when undrafted.</FG.EnemySearchDesc>
+  <FG.LastStandMote>Last stand!</FG.LastStandMote>
+  <FG.ShockFall>The psychic shock tore through {PAWN_nameDef}'s wings, and {PAWN_pronoun} fell from the sky.</FG.ShockFall>
+  <FG.GizmoAllPsyfocus>P: all</FG.GizmoAllPsyfocus>
+  <FG.GizmoFatal>Fatal</FG.GizmoFatal>
+  <FG.IntrepidStrikeMote>Avalanche!</FG.IntrepidStrikeMote>
+  <FG.VenenumAutoRightClick>Right-click to change when the wings come out on their own ({0}).</FG.VenenumAutoRightClick>
+  <FG.VenenumAutoSleep>While {PAWN_nameDef} sleeps, the wings fold and {PAWN_pronoun} rests on the ground. Set this to never to let {PAWN_objective} fly in {PAWN_possessive} sleep.</FG.VenenumAutoSleep>
+  <FG.AutoModeOff>never</FG.AutoModeOff>
+  <FG.AutoModeDraft>when drafted</FG.AutoModeDraft>
+  <FG.AutoModeAlways>always, whenever it is safe; at the heat limit the wings fold until the heat is gone</FG.AutoModeAlways>
+  <FG.AutoModeAlwaysStamina>always, whenever the wings are rested; they fold when the stamina runs out</FG.AutoModeAlwaysStamina>
+  <FG.VenenumAlwaysDelirium>{PAWN_nameDef} already suffers from psychic delirium. Each day, the first time {PAWN_possessive} wings come out on their own, it will grow a little deeper.</FG.VenenumAlwaysDelirium>
+  <FG.VenenumAlwaysDeliriumRaised>{PAWN_nameDef}'s wings came out on their own, and the delirium sank a little deeper.</FG.VenenumAlwaysDeliriumRaised>
+  <FG.AutoOn>on</FG.AutoOn>
+  <FG.AutoOff>off</FG.AutoOff>
+  <FG.AbilityAutoRightClick_Melee>Right-click: use automatically in melee ({0}).</FG.AbilityAutoRightClick_Melee>
+  <FG.AbilityAutoRightClick_Shock>Right-click: use automatically against a psychic shock ({0}).</FG.AbilityAutoRightClick_Shock>
+  <FG.LimitReachedTitle>Neural heat limit: {PAWN_nameDef}</FG.LimitReachedTitle>
+  <FG.LimitReached>{PAWN_nameDef}'s wings are burning at their limit.\n\nPush on, and {PAWN_pronoun} stays in the air, but something in {PAWN_possessive} mind will begin to give way. {PAWN_nameDef} has to be willing.\n\nLet it burn out, and the wings fade and {PAWN_pronoun} comes down.</FG.LimitReached>
+  <FG.LimitPushOn>Push on</FG.LimitPushOn>
+  <FG.LimitBurnOut>Let it burn out</FG.LimitBurnOut>
+  <FG.VenenumLocked>{PAWN_nameDef}'s mind is lost to the delirium. The wings will not fold.</FG.VenenumLocked>
+  <FG.VenenumTooYoung>{PAWN_nameDef} is a baby. Babies are too young to fly.</FG.VenenumTooYoung>
+  <FG.VenenumNeedsWings>Venenum needs an active wing gene to fly.</FG.VenenumNeedsWings>
+  <FG.StatPart_VenenumHeatLimit>Venenum (its own psychic sensitivity does not raise the limit)</FG.StatPart_VenenumHeatLimit>
+  <FG.MomentumReady>Momentum</FG.MomentumReady>
+  <FG.MomentumStrike>Momentum!</FG.MomentumStrike>
+  <FG.VenenumHeatBracket>heat {0}</FG.VenenumHeatBracket>
+  <FG.VenenumCollapsed>The heat was too much. {PAWN_nameDef} has collapsed, {PAWN_possessive} mind overwhelmed.</FG.VenenumCollapsed>
+  <FG.PsyfocusRestored>+{0} psyfocus</FG.PsyfocusRestored>
+  <FG.StatPart_VenenumAttackSpeed>Venenum heat (+{0} attack speed)</FG.StatPart_VenenumAttackSpeed>
+  <FG.StatPart_DeliriumSensitivity>Psychic delirium</FG.StatPart_DeliriumSensitivity>
+
+  <!-- Mod settings -->
+  <FG.ModName>Fairycore - Spirit Wings</FG.ModName>
+  <FG.SettingsDevOnly>Turn on Dev Mode for the developer options.</FG.SettingsDevOnly>
+  <FG.SettingsDevHeader>Developer options</FG.SettingsDevHeader>
+  <FG.SettingsAllowMale>Allow male fairies</FG.SettingsAllowMale>
+  <FG.SettingsAllowMaleDesc>Men can use Venenum and Pixie with all their powers. Any fairy race can be born male.</FG.SettingsAllowMaleDesc>
+  <FG.AnyWingsGene>any wings gene</FG.AnyWingsGene>
+  <FG.VenenumDescCosmetic>While active, gain flight and some evasion.</FG.VenenumDescCosmetic>
+  <FG.TextMote_Evaded>Evaded</FG.TextMote_Evaded>
+
+  <!-- Psychic delirium -->
+  <FG.DeliriumReason>psychic delirium</FG.DeliriumReason>
+  <FG.AbilityDisabled_FairysGate>{PAWN_nameDef}'s psychic delirium is below 75%.</FG.AbilityDisabled_FairysGate>
+  <FG.AbilityDisabled_FairysGateOpening>Fairy's Gate is already opening.</FG.AbilityDisabled_FairysGateOpening>
+  <FG.AbilityDisabled_Unavailable>{PAWN_nameDef} cannot use this ability right now.</FG.AbilityDisabled_Unavailable>
+  <FG.DeliriumGainedLabel>Delirium: {PAWN_nameDef}</FG.DeliriumGainedLabel>
+  <FG.DeliriumGainedText>{PAWN_nameDef} went past the limit, and something on the other side looked back.\n\nA red-haired girl now waits at the edge of {PAWN_possessive} thoughts. Every flight brings her closer. She will teach {PAWN_objective} things no one should know, and she does not let go easily.\n\nRest, play and good company may slowly loosen her grip.</FG.DeliriumGainedText>
+  <FG.DeliriumVomit>{PAWN_nameDef} is sick from the visions.</FG.DeliriumVomit>
+  <FG.DeliriumCatatonic>{PAWN_nameDef} has gone somewhere far away inside {PAWN_possessive} own mind.</FG.DeliriumCatatonic>
+  <FG.DeliriumAlzheimersLabel>Delirium: {PAWN_nameDef}</FG.DeliriumAlzheimersLabel>
+  <FG.DeliriumAlzheimersText>The visions have taken pieces of {PAWN_nameDef}'s memory, and they will not come back.</FG.DeliriumAlzheimersText>
+  <FG.DeliriumExplodedLabel>The end: {PAWN_nameDef}</FG.DeliriumExplodedLabel>
+  <FG.DeliriumExplodedText>{PAWN_nameDef} is gone. The delirium took everything, and what was left burned brighter than the sun. Nothing remains.</FG.DeliriumExplodedText>
+  <FG.FairysGateExplodedText>{PAWN_nameDef} opened Fairy's Gate. For a heartbeat the world was full of light. Nothing of {PAWN_objective} remains.</FG.FairysGateExplodedText>
+
+  <!-- Flutter dash -->
+  <FG.AbilityDisabled_Venenum>{PAWN_nameDef}'s Venenum is not switched on.</FG.AbilityDisabled_Venenum>
+  <FG.AbilityDisabled_NoMeleeWeapon>{PAWN_nameDef} needs a melee weapon in hand.</FG.AbilityDisabled_NoMeleeWeapon>
+  <FG.AbilityDisabled_Hunger>{PAWN_nameDef} is too hungry to fly.</FG.AbilityDisabled_Hunger>
+  <FG.AbilityDisabled_Rest>{PAWN_nameDef} is too tired to fly.</FG.AbilityDisabled_Rest>
+  <FG.AbilityDisabled_Psyfocus>{PAWN_nameDef} does not have enough psyfocus ({1} needed).</FG.AbilityDisabled_Psyfocus>
+  <FG.VenenumHeatGizmo>Venenum heat</FG.VenenumHeatGizmo>
+  <FG.VenenumHeatGizmo_On>Venenum on</FG.VenenumHeatGizmo_On>
+  <FG.VenenumHeatGizmo_BurntOut>burnt out</FG.VenenumHeatGizmo_BurntOut>
+  <FG.VenenumHeatGizmo_Beyond>beyond the limit</FG.VenenumHeatGizmo_Beyond>
+  <FG.VenenumHeatGizmoDesc>The heat Venenum leaves behind. It builds while the wings are out and fades when they rest. Too much, and something has to give.</FG.VenenumHeatGizmoDesc>
+
+  <!-- Flavor text (VenenumFlavor). Each pool: 1 lover, 2 parent, 3 child, 4 sibling, 5 friend, 6 best friend, 7 colony,
+       8 life in the colony, 9 a memorable event, 10 everyone. A line is only picked when its subject exists. -->
+  <FG.Flavor.ColonyFallback>this place</FG.Flavor.ColonyFallback>
+  <FG.Flavor.OneDay>1 day</FG.Flavor.OneDay>
+  <FG.Flavor.Days>{0} days</FG.Flavor.Days>
+  <FG.AbilityDisabled_FairysGateRefused>{PAWN_nameDef} refused to open Fairy's Gate. Ask again in {1}.</FG.AbilityDisabled_FairysGateRefused>
+  <FG.FairysGateWarningTitle>Fairy's Gate: {PAWN_nameDef}</FG.FairysGateWarningTitle>
+  <FG.FairysGateWarning>Opening Fairy's Gate will kill {PAWN_nameDef} instantly.
+
+Once the Gate opens, there is no coming back. The psychic rupture leaves behind nothing that can be restored. Anyone standing too close may be taken with {PAWN_objective}.
+
+This choice cannot be forced. {PAWN_nameDef} must willingly open the Gate, and {PAWN_possessive} resolve depends on {PAWN_possessive} mood and on the people {PAWN_pronoun} would be dying for.
+
+Beyond the Gate, something is waiting to answer.</FG.FairysGateWarning>
+
+  <!-- Memorable events ({EVENT}), from the pawn's own tales. {OTHER} = the other pawn or animal in the tale. -->
+  <FG.FlavorEvent.Marriage>the day {OTHER} and I were married</FG.FlavorEvent.Marriage>
+  <FG.FlavorEvent.BecameLover>the night {OTHER} and I first fell for each other</FG.FlavorEvent.BecameLover>
+  <FG.FlavorEvent.TamedAnimal>the day {OTHER} first trusted me</FG.FlavorEvent.TamedAnimal>
+  <FG.FlavorEvent.BondedWithAnimal>the day {OTHER} chose me</FG.FlavorEvent.BondedWithAnimal>
+  <FG.FlavorEvent.KilledMajorThreat>the day we brought down {OTHER}</FG.FlavorEvent.KilledMajorThreat>
+  <FG.FlavorEvent.DefeatedHostileFactionLeader>the day we beat {OTHER}</FG.FlavorEvent.DefeatedHostileFactionLeader>
+  <FG.FlavorEvent.GaveBirth>the first time I held my newborn</FG.FlavorEvent.GaveBirth>
+  <FG.FlavorEvent.LandedInPod>the day I fell out of the sky into this place</FG.FlavorEvent.LandedInPod>
+  <FG.FlavorEvent.CompletedLongConstructionProject>the day I finished building something that will outlast me</FG.FlavorEvent.CompletedLongConstructionProject>
+  <FG.FlavorEvent.GainedMasterSkillWithPassion>the day I finally mastered the thing I love</FG.FlavorEvent.GainedMasterSkillWithPassion>
+  <FG.FlavorEvent.AttendedParty>the party where we all laughed until sunrise</FG.FlavorEvent.AttendedParty>
+  <FG.FlavorEvent.AttendedConcert>the night we all sat together and listened to the music</FG.FlavorEvent.AttendedConcert>
+  <FG.FlavorEvent.BuiltSnowman>the winter we built a snowman together</FG.FlavorEvent.BuiltSnowman>
+  <FG.FlavorEvent.FinishedResearchProject>the night our research finally worked</FG.FlavorEvent.FinishedResearchProject>
+  <FG.FlavorEvent.CaravanAmbushDefeated>the day we fought off the ambush on the road</FG.FlavorEvent.CaravanAmbushDefeated>
+  <FG.FlavorEvent.Downed>the day I fell in battle and someone carried me home</FG.FlavorEvent.Downed>
+
+  <!-- 1. Forcing Venenum on past the neural heat limit (at most once a day): melancholy resolve. -->
+  <FG.Flavor.Resolve.Title>{PAWN_nameDef}: beyond the limit</FG.Flavor.Resolve.Title>
+  <FG.Flavor.Resolve.1>{PAWN_nameDef} presses a hand to {PAWN_possessive} temple as the wings ignite again, too hot, too bright.\n\n"{LOVER_nameDef} would tell me to stop, and {LOVER_nameDef} would be right. But I've seen the way {LOVER_pronoun} smiles at the end of a day when we're both still here. I want one more of those. If Venenum takes the rest of me for it, let it."</FG.Flavor.Resolve.1>
+  <FG.Flavor.Resolve.2>The heat behind {PAWN_nameDef}'s eyes has a sound now, a thin high ringing that will not stop.\n\n"{PARENT_nameDef} always said you don't get to choose what something costs, only what it's for. I understand that now. This is for everyone who still needs me standing."</FG.Flavor.Resolve.2>
+  <FG.Flavor.Resolve.3>{PAWN_nameDef} looks back once, toward where {CHILD_nameDef} should be safe.\n\n"I can feel it eating at the edges of me. Fine. Let it. As long as {CHILD_nameDef} grows up remembering someone who stood in front of the dark, and not someone who ran from it."</FG.Flavor.Resolve.3>
+  <FG.Flavor.Resolve.4>"{SIBLING_nameDef} and I swore we'd grow old and boring together, arguing over nothing by the fire." {PAWN_nameDef} laughs, and it comes out cracked.\n\n"Sorry. I think I'm going to break that promise a little. Somebody has to keep you breathing long enough to keep yours."</FG.Flavor.Resolve.4>
+  <FG.Flavor.Resolve.5>"{FRIEND_nameDef} saved my life once and never let me thank {FRIEND_objective} properly." The wings flare, and something inside {PAWN_nameDef} quietly gives way.\n\n"This is me saying thank you. Don't you dare come over here."</FG.Flavor.Resolve.5>
+  <FG.Flavor.Resolve.6>{PAWN_nameDef} thinks of {BESTFRIEND_nameDef}. The stupid jokes, the long nights, the way {BESTFRIEND_pronoun} always knew when to say nothing at all.\n\n"Nobody else gets to be my best friend. So nothing gets to take you. Not while there's still some of me left to burn."</FG.Flavor.Resolve.6>
+  <FG.Flavor.Resolve.7>"{COLONY}. A few walls, a few fields, never enough medicine." {PAWN_nameDef}'s breath shakes as the heat climbs past anything a mind should hold.\n\n"It isn't much. But it's ours, and I won't stand and watch it burn while I still have wings."</FG.Flavor.Resolve.7>
+  <FG.Flavor.Resolve.8>"{DAYS}," {PAWN_nameDef} murmurs. "{DAYS} of the same table, the same quarrels, the same bad jokes. I never noticed how much I loved all of it."\n\nThe wings blaze up again, and something quiet inside {PAWN_objective} begins to burn.\n\n"I'd give a few more days for it. I'd give all of them."</FG.Flavor.Resolve.8>
+  <FG.Flavor.Resolve.9>{PAWN_nameDef} remembers {EVENT}. It feels like another life now, warm and very far away.\n\n"We came through that. We'll come through this too, even if I'm not there at the end to see it."</FG.Flavor.Resolve.9>
+  <FG.Flavor.Resolve.10>The heat whispers that it's time to stop, that nobody could blame {PAWN_objective} for stopping. {PAWN_nameDef} listens, and lets the whisper pass.\n\n"They're all still out there fighting. So am I. That's all there is to it."</FG.Flavor.Resolve.10>
+
+  <!-- 2. 75% delirium, Fairy's Gate unlocked: more intense, the delirium showing. -->
+  <FG.Flavor.Gate.Title>{PAWN_nameDef}: the Gate opens within</FG.Flavor.Gate.Title>
+  <FG.Flavor.Gate.1>Colors are bleeding out of the world. Shadows move half a second after the things that cast them, and somewhere deep in {PAWN_nameDef}'s skull a door has opened: Fairy's Gate, humming like a held breath.\n\n"I keep hearing {LOVER_nameDef}'s voice in the static. I don't know which one is real anymore. It doesn't matter. Whichever one it is, I'm still fighting for {LOVER_objective}. Hold on, {LOVER_nameDef}. Just a little longer."</FG.Flavor.Gate.1>
+  <FG.Flavor.Gate.2>"{PARENT_nameDef}?" {PAWN_nameDef} turns toward a voice no one else can hear. The air tastes of copper and pollen, and the wings won't stop trembling.\n\n"You taught me to finish what I start. There's a gate inside me now, and I know what waits on the other side. Not yet. Not while they still need me."</FG.Flavor.Gate.2>
+  <FG.Flavor.Gate.3>Every heartbeat rings like a bell. {PAWN_nameDef} can feel the Gate inside {PAWN_objective}, warm and patient, waiting to be opened.\n\n"I can't remember what I ate today. I can't remember my own birthday. But I remember {CHILD_nameDef}'s laugh, every note of it. As long as I remember that, I keep going."</FG.Flavor.Gate.3>
+  <FG.Flavor.Gate.4>{PAWN_nameDef}'s hands won't stop shaking. The world has gone too sharp. Every sound is a blade, every face half a stranger's.\n\n"{SIBLING_nameDef}, if I start forgetting you, hit me. Hard. I'm not done protecting you. There's a door in my head that would end all of this, and I'm keeping it shut for you."</FG.Flavor.Gate.4>
+  <FG.Flavor.Gate.5>The delirium sings in a voice made of a thousand wings. {PAWN_nameDef} grits {PAWN_possessive} teeth until they ache.\n\n"{FRIEND_nameDef} is out there. I watched {FRIEND_objective} fall in a dream and woke up screaming. I won't let that dream come true. I'll burn every last piece of myself first."</FG.Flavor.Gate.5>
+  <FG.Flavor.Gate.6>Something behind {PAWN_nameDef}'s eyes has cracked open, and the light pouring out of it has a name: Fairy's Gate.\n\n"{BESTFRIEND_nameDef}... if I ever have to open it, stand far away. Promise me. And promise you'll laugh about me afterwards, the way we always laughed. That's the only way I can keep fighting."</FG.Flavor.Gate.6>
+  <FG.Flavor.Gate.7>The walls of {COLONY} breathe in and out. The sky is the wrong color. {PAWN_nameDef} knows none of it is real, and knowing doesn't help at all.\n\n"The Gate is open in me now. One step and it all ends. But every wall here was built by hands I love. I'm staying. I'm fighting. I'm not done yet."</FG.Flavor.Gate.7>
+  <FG.Flavor.Gate.8>{PAWN_nameDef} can't stop counting. {DAYS}. {DAYS}. The number sounds like a heartbeat, and the heartbeat sounds like wings.\n\n"Every one of those days was worth more than whatever is left of my mind. I'll spend what's left. Just let me spend it on them."</FG.Flavor.Gate.8>
+  <FG.Flavor.Gate.9>Memories have started to tear at the edges. {PAWN_nameDef} holds on to one with both hands. It's {EVENT}.\n\n"That one's mine. You can't have it. Whatever this delirium takes from me, it doesn't get that, and it doesn't get them. There's a gate inside me now, and I decide when it opens."</FG.Flavor.Gate.9>
+  <FG.Flavor.Gate.10>Everything is too loud. The wind, the heartbeats all around, the wings that will not fold. Deep inside, a gate stands open, glowing softly, and it would be so easy to step through.\n\n"Not yet. Not while anyone here still needs me. When I go, I'll go for them, not because I gave up."</FG.Flavor.Gate.10>
+
+  <!-- 3a. Asked to open Fairy's Gate, too unhappy: refusal. -->
+  <FG.Flavor.Refuse.Title>{PAWN_nameDef} refuses</FG.Flavor.Refuse.Title>
+  <FG.Flavor.Refuse.1>{PAWN_nameDef} stares at nothing, hollow-eyed, and doesn't move.\n\n"Die for this? {LOVER_nameDef} barely looks at me anymore. I won't throw myself away while everything is this gray. Ask me again when I have something left that's worth dying for."</FG.Flavor.Refuse.1>
+  <FG.Flavor.Refuse.2>"{PARENT_nameDef} didn't raise me to throw my life away on a bad day." {PAWN_nameDef}'s voice is flat and tired. "And this is a bad day. Every day here is. No."</FG.Flavor.Refuse.2>
+  <FG.Flavor.Refuse.3>{PAWN_nameDef} shakes {PAWN_possessive} head slowly.\n\n"If I go now, the last thing {CHILD_nameDef} remembers of me is how miserable I was. I won't leave {CHILD_objective} that. Not like this."</FG.Flavor.Refuse.3>
+  <FG.Flavor.Refuse.4>"{SIBLING_nameDef} would never forgive me. And honestly? I don't feel like I owe anyone here anything right now." {PAWN_nameDef} turns away from the light inside.</FG.Flavor.Refuse.4>
+  <FG.Flavor.Refuse.5>"{FRIEND_nameDef} is the only one who's asked how I'm doing in days." {PAWN_nameDef} laughs bitterly. "Nobody else gets my life. Not today."</FG.Flavor.Refuse.5>
+  <FG.Flavor.Refuse.6>"What would {BESTFRIEND_nameDef} even say? 'Thanks for blowing yourself up'?" {PAWN_nameDef}'s jaw tightens. "I'm too miserable to be anybody's hero. I'm not opening it."</FG.Flavor.Refuse.6>
+  <FG.Flavor.Refuse.7>"{COLONY}." {PAWN_nameDef} says the name as if it tastes sour. "Cold meals, hard floors, nobody listening. You want me to die for that? Make it a place worth dying for first."</FG.Flavor.Refuse.7>
+  <FG.Flavor.Refuse.8>"{DAYS} I've given this colony, and look at me." {PAWN_nameDef} holds out shaking hands. "I'm empty. There's nothing left in me that wants to save anyone. No."</FG.Flavor.Refuse.8>
+  <FG.Flavor.Refuse.9>"Remember {EVENT}? I thought things would get better after that. They didn't." {PAWN_nameDef} lets the Gate's glow fade. "I'm not opening it. Not for this."</FG.Flavor.Refuse.9>
+  <FG.Flavor.Refuse.10>The glow of the Gate flickers and sinks back down. {PAWN_nameDef} sits heavily and stares at the ground.\n\n"No. I'm too tired, too sad, too angry. You don't sacrifice yourself feeling like this. You just disappear. I won't."</FG.Flavor.Refuse.10>
+
+  <!-- 3b. Asked to open Fairy's Gate, and willing: last words, then the Gate opens. -->
+  <FG.Flavor.LastWords.Title>{PAWN_nameDef}'s last words</FG.Flavor.LastWords.Title>
+  <FG.Flavor.LastWords.1>{PAWN_nameDef} steps forward, and the Gate inside {PAWN_objective} opens like a flower.\n\n"{LOVER_nameDef}... I'm sorry I won't be home tonight. Look up whenever the sky is bright. That'll be me, still keeping you safe. I loved you every single day."</FG.Flavor.LastWords.1>
+  <FG.Flavor.LastWords.2>"{PARENT_nameDef}, I finished it. Just like you taught me." {PAWN_nameDef} smiles through tears as the wings unfold, wider than they have ever been. "Don't be sad for too long. I'm proud of how I'm going."</FG.Flavor.LastWords.2>
+  <FG.Flavor.LastWords.3>"{CHILD_nameDef}, be brave. Be kinder than I was. Grow up somewhere safe." The glow swallows {PAWN_nameDef}'s outline. "That's all I ever wanted. That's what this is for."</FG.Flavor.LastWords.3>
+  <FG.Flavor.LastWords.4>"{SIBLING_nameDef}... sorry about the promise. Grow old enough for both of us, all right? Argue with somebody by the fire for me." {PAWN_nameDef} laughs once, softly, and opens the Gate.</FG.Flavor.LastWords.4>
+  <FG.Flavor.LastWords.5>"{FRIEND_nameDef}, this makes us even. Don't argue." {PAWN_nameDef}'s wings burn white. "And look after everyone. You're good at that, even if you'll never admit it."</FG.Flavor.LastWords.5>
+  <FG.Flavor.LastWords.6>"{BESTFRIEND_nameDef}. Best friend I ever had." {PAWN_nameDef}'s voice is perfectly steady now, as if all the fear has burned away. "Laugh about me. Tell the stupid stories. Don't you dare make it a sad one."</FG.Flavor.LastWords.6>
+  <FG.Flavor.LastWords.7>"Take care of {COLONY} for me." {PAWN_nameDef} turns toward the enemy, and the light of Fairy's Gate rises around {PAWN_objective} like dawn. "Plant something where I stood. Let it grow."</FG.Flavor.LastWords.7>
+  <FG.Flavor.LastWords.8>"{DAYS}. It was a good life. Better than I deserved." {PAWN_nameDef}'s wings spread wide, glowing brighter and brighter. "Thank you, all of you, for every one of them."</FG.Flavor.LastWords.8>
+  <FG.Flavor.LastWords.9>"Remember {EVENT}? Remember me like that, not like this." {PAWN_nameDef} closes {PAWN_possessive} eyes, and the Gate opens.</FG.Flavor.LastWords.9>
+  <FG.Flavor.LastWords.10>{PAWN_nameDef} looks at each of them in turn, memorizing faces.\n\n"Don't cry too much. Eat something warm tonight. Live long, boring, happy lives. That's my last order."\n\nThe Gate opens, and the world goes white.</FG.Flavor.LastWords.10>
+
+  <!-- 4. 90% delirium: berserk frenzy, enemies everywhere. Scarborough Fair starts. -->
+  <FG.Flavor.Frenzy.Title>{PAWN_nameDef}: lost to delirium</FG.Flavor.Frenzy.Title>
+  <FG.Flavor.Frenzy.1>The faces are wrong. They're all wrong. {PAWN_nameDef} screams, and the wings answer with a shriek of light.\n\n"They're wearing {LOVER_nameDef}'s face! Every one of them! I'll tear them all down until I find the real one! I'll protect you, I'll protect you, I'll PROTECT YOU!"</FG.Flavor.Frenzy.1>
+  <FG.Flavor.Frenzy.2>"{PARENT_nameDef} said kill them! Kill them all!" {PAWN_nameDef}'s eyes are pure white light. Every shape that moves is a threat; every shadow has teeth.\n\n"I'm doing it right this time! Nobody hurts us again! NOBODY!"</FG.Flavor.Frenzy.2>
+  <FG.Flavor.Frenzy.3>{PAWN_nameDef} hears {CHILD_nameDef} crying everywhere at once. Behind the walls, under the ground, inside the wind.\n\n"{CHILD_nameDef}?! Where are you?! Who took you?! Everyone is the enemy. EVERYONE. I'll cut through the whole world to get you back!"</FG.Flavor.Frenzy.3>
+  <FG.Flavor.Frenzy.4>"{SIBLING_nameDef}, run! They've got your face, they're inside your face!" {PAWN_nameDef} lunges at the nearest shape, laughing and sobbing at once.\n\n"I'll keep you safe. I'll keep you safe. Even from you."</FG.Flavor.Frenzy.4>
+  <FG.Flavor.Frenzy.5>The world is red and gold and humming. {PAWN_nameDef} no longer knows who {FRIEND_nameDef} is, only that {FRIEND_nameDef} matters, and that everything else must die.\n\n"Stay behind me! Stay behind me! Anything that moves, I kill!"</FG.Flavor.Frenzy.5>
+  <FG.Flavor.Frenzy.6>"{BESTFRIEND_nameDef}, they're everywhere, can't you see them? They're crawling out of the walls!" {PAWN_nameDef}'s wings slash the air, scattering burning dust.\n\n"I'll kill every last one. Then you'll laugh at me again. Then it'll all be okay."</FG.Flavor.Frenzy.6>
+  <FG.Flavor.Frenzy.7>{COLONY} is burning. It isn't, but {PAWN_nameDef} sees it burning, sees the enemy in every doorway, hears the walls scream.\n\n"GET OUT OF MY HOME! Get out, get out, GET OUT! I'll kill every one of you!"</FG.Flavor.Frenzy.7>
+  <FG.Flavor.Frenzy.8>"{DAYS}... {DAYS}..." The count has become a growl. {PAWN_nameDef} no longer recognizes the colony, only the certainty that something here must be destroyed.\n\n"I protected you for so long. Let me protect you now. Let me kill them!"</FG.Flavor.Frenzy.8>
+  <FG.Flavor.Frenzy.9>It's {EVENT}, again and again, looping behind {PAWN_nameDef}'s eyes, but now every face in the memory is a monster's.\n\n"It's happening again! They're back! I won't let it happen again! I'll kill them, I'll kill them ALL!"</FG.Flavor.Frenzy.9>
+  <FG.Flavor.Frenzy.10>There are enemies in every shadow, in every face, in the sky itself. {PAWN_nameDef} has stopped seeing friends.\n\n"Come on, then! All of you! I'll fight you forever! I'm the last thing standing between you and everything I love!"</FG.Flavor.Frenzy.10>
+
+  <!-- 5. 100% delirium: distorted, then one clear last sentence. The end follows when the box is closed. -->
+  <FG.Flavor.End.Title>{PAWN_nameDef}: the end</FG.Flavor.End.Title>
+  <FG.Flavor.End.1>"{LOVER_nameDef} {LOVER_nameDef} lo-- where-- warm hands, warm, warm, the light is so loud, i can't, i can't see your-- is that you? is that-- everything is wings everything is wings everything is--"\n\nThen, for one heartbeat, perfectly clear:\n\n"I have no regrets, {LOVER_nameDef}. I fought for you until the very end."</FG.Flavor.End.1>
+  <FG.Flavor.End.2>"pa-- par-- {PARENT_nameDef}? you said, you said finish what you start, finish, finish, fin-- the gate the gate the gate is singing in my teeth--"\n\nThe noise stops all at once.\n\n"I finished it. No regrets."</FG.Flavor.End.2>
+  <FG.Flavor.End.3>"{CHILD_nameDef} sleep now sleep now the monsters are gone are gone are gone i ate them all the light ate them all the light is eating me too it's okay it's okay it's o--"\n\nA soft breath.\n\n"I'd do it all again for you. Every second. No regrets."</FG.Flavor.End.3>
+  <FG.Flavor.End.4>"promised promised we promised old and boring old and boring old and-- {SIBLING_nameDef} why is the sky inside my head why is it so bright so BRIGHT--"\n\nSilence, and then a whisper:\n\n"Keep the promise for both of us. I don't regret a thing."</FG.Flavor.End.4>
+  <FG.Flavor.End.5>"f-- fr-- {FRIEND_nameDef} {FRIEND_nameDef} which one is real which one which one i killed so many of you so many shapes so many wings--"\n\nThe screaming stops.\n\n"No regrets. I'd fight for you again in a heartbeat."</FG.Flavor.End.5>
+  <FG.Flavor.End.6>"ha ha ha it's funny it's so funny {BESTFRIEND_nameDef} remember the-- remember-- i can't remember the joke i can't remember the joke i can't--"\n\nA last, perfectly ordinary smile.\n\n"Best friend I ever had. No regrets. Not one."</FG.Flavor.End.6>
+  <FG.Flavor.End.7>"ha, ha ha, HAHAHAHA! {COLONY}! for {IDEOLOUD}! say hello to {DEITYLOUD}! {SLEEPERS} and neither do i, NEITHER DO I! oh what a day, WHAT A LOVELY DAY! {SHINY}, {SHINY}, i ride eternal, all the way to {DEITY}, {SHINYLOUD}--"\n\nThe laughter cuts off. Wings blazing white, {PAWN_nameDef} looks back over {PAWN_possessive} shoulder one last time.\n\n"Witness me."</FG.Flavor.End.7>
+  <FG.Flavor.End.8>"{DAYS} {DAYS} {DAYS} days days daysdaysdays counting counting the count is eating the numbers the numbers have teeth--"\n\nA sudden, clear calm.\n\n"Every one of those days was worth it. I regret nothing."</FG.Flavor.End.8>
+  <FG.Flavor.End.9>"{EVENT} {EVENT} again again again i'm there i'm still there i never left i never left the light never left--"\n\nAnd then, quietly:\n\n"We made it through, didn't we? Then I have no regrets."</FG.Flavor.End.9>
+  <FG.Flavor.End.10>"no no no no wings wings wings so many wings in my mouth in my eyes everything is enemy everything is me everything is light light light LIGHT--"\n\nFor one last heartbeat, the delirium lets go.\n\n"I fought for everything I loved. I don't regret any of it."</FG.Flavor.End.10>
+  <!-- 11: Easter egg, one ending in ten whoever the pawn is (VenenumFlavor.AliceChance). -->
+  <FG.Flavor.End.11>"Alice? Alice. ALICE! alice in the walls, alice in the sky, alice wearing every face, so many alices with red, red hair, and none of them are HER-- Alice? Where is Alice? Alice!! There is not enough Alice!!! not enough, never enough, alice alice alice alice--"\n\nThe screaming fades into something almost like peace. {PAWN_nameDef} smiles and reaches for a hand no one else can see.\n\n"I'm going to Alice..."</FG.Flavor.End.11>
+  <!-- End.7's war cry pieces (VenenumFlavor.AddCreed). -->
+  <FG.Flavor.Sleepers.Followers>{FOLLOWERS} of {PLACE} never sleep</FG.Flavor.Sleepers.Followers>
+  <FG.Flavor.Sleepers.Place>{PLACE} never sleeps</FG.Flavor.Sleepers.Place>
+  <FG.Flavor.ShinyAndChrome>shiny and chrome</FG.Flavor.ShinyAndChrome>
+
+  <!-- 6. Asked to force Venenum on past the heat limit, too unhappy: refusal. Mood only, no relationships: any line. -->
+  <FG.Flavor.ForceRefuse.Title>{PAWN_nameDef} holds back</FG.Flavor.ForceRefuse.Title>
+  <FG.Flavor.ForceRefuse.1>{PAWN_nameDef} lets the flickering wings fold away.\n\n"No. My head is still ringing from the last time. I'm not tearing myself open again for a place that can't even give me a decent night's sleep."</FG.Flavor.ForceRefuse.1>
+  <FG.Flavor.ForceRefuse.2>"You want more?" {PAWN_nameDef}'s laugh is thin and humorless. "There isn't more. Not today. Find someone who still has something left."</FG.Flavor.ForceRefuse.2>
+  <FG.Flavor.ForceRefuse.3>{PAWN_nameDef} presses both palms against {PAWN_possessive} eyes until the light behind them dims.\n\n"I can hear it whispering to go further. I'm not listening. Not feeling like this."</FG.Flavor.ForceRefuse.3>
+  <FG.Flavor.ForceRefuse.4>"{DAYS} I've given {COLONY}, and I'm still eating cold food off the floor." {PAWN_nameDef} turns away. "No. Not this time."</FG.Flavor.ForceRefuse.4>
+  <FG.Flavor.ForceRefuse.5>"Burn myself out so the rest of you can have a better day than me? I'm already miserable." {PAWN_nameDef} folds {PAWN_possessive} arms. "Let someone else be the hero."</FG.Flavor.ForceRefuse.5>
+  <FG.Flavor.ForceRefuse.6>The heat still crawls under {PAWN_nameDef}'s skin, and {PAWN_pronoun} shakes {PAWN_possessive} head, slow and final.\n\n"Wings don't fix how I feel. They only make it louder."</FG.Flavor.ForceRefuse.6>
+  <FG.Flavor.ForceRefuse.7>"I'm tired. I'm sad. I'm angry. You don't push past the limit feeling like this. You just break." {PAWN_nameDef} sits down hard. "I'm not breaking for you."</FG.Flavor.ForceRefuse.7>
+  <FG.Flavor.ForceRefuse.8>{PAWN_nameDef} reaches for the power, and stops halfway.\n\n"No. Something in me doesn't want to come back from that place today. I'm not going there."</FG.Flavor.ForceRefuse.8>
+  <FG.Flavor.ForceRefuse.9>"Ask me when this place feels like home again," {PAWN_nameDef} mutters. "Right now it doesn't. Right now it's just walls."</FG.Flavor.ForceRefuse.9>
+  <FG.Flavor.ForceRefuse.10>The wings sputter once and go dark. {PAWN_nameDef} doesn't try to light them again.\n\n"Not today. Give me a reason to fight that hard, and maybe I will."</FG.Flavor.ForceRefuse.10>
+  <!-- 7. 25% delirium, Brandish learned: the body answering faster than the mind. -->
+  <FG.Flavor.Brandish.Title>{PAWN_nameDef}: the body moves first</FG.Flavor.Brandish.Title>
+  <FG.Flavor.Brandish.1>{PAWN_nameDef}'s hand is already moving before {PAWN_pronoun} decides to move it. The wings flicker, and for one heartbeat everything else is standing still.\n\n"That was fast. Too fast. {LOVER_nameDef}, if I ever need to be that fast to reach you, I will be. I just hope I come back the same."</FG.Flavor.Brandish.1>
+  <FG.Flavor.Brandish.2>Something inside {PAWN_nameDef} lunges ahead of {PAWN_objective}, eager, wild, delighted.\n\n"{PARENT_nameDef} always said I was too impatient. I think Venenum agrees with you. I think it likes that about me."</FG.Flavor.Brandish.2>
+  <FG.Flavor.Brandish.3>For a moment {PAWN_nameDef} can see every grain of dust hanging in the air, and {PAWN_possessive} body is already through it.\n\n"If anything ever comes for {CHILD_nameDef}, it will not see me move. That's a promise, little one. Even if it isn't really me moving."</FG.Flavor.Brandish.3>
+  <FG.Flavor.Brandish.4>"Did you see that?" {PAWN_nameDef} laughs, breathless, staring at {PAWN_possessive} own trembling hands. "I didn't even think. It just happened.\n\n"{SIBLING_nameDef} always beat me in every race we ran. Not anymore."</FG.Flavor.Brandish.4>
+  <FG.Flavor.Brandish.5>The wings snap open with a sound like tearing silk, and the world blurs.\n\n"{FRIEND_nameDef}, stay behind me. I'm faster than I should be now. I'll use every bit of it to keep you standing."</FG.Flavor.Brandish.5>
+  <FG.Flavor.Brandish.6>{PAWN_nameDef} catches {PAWN_possessive} own reflection mid-motion and does not recognize the speed of it.\n\n"{BESTFRIEND_nameDef} would tell me this is the coolest thing that's ever happened. And {BESTFRIEND_pronoun}'d be right. And it would still be a little bit terrifying."</FG.Flavor.Brandish.6>
+  <FG.Flavor.Brandish.7>"Let Venenum have my hands for a second," {PAWN_nameDef} whispers. "Just one second. That's all I'll ever give it.\n\n"For {COLONY}. One second at a time."</FG.Flavor.Brandish.7>
+  <FG.Flavor.Brandish.8>"{DAYS} of learning to fight like a person." {PAWN_nameDef} flexes {PAWN_possessive} fingers, and they twitch faster than they should. "And now my body has learned something else. Something that isn't quite mine."</FG.Flavor.Brandish.8>
+  <FG.Flavor.Brandish.9>{PAWN_nameDef} thinks of {EVENT}, and of how slow everything was then.\n\n"If I'd been this fast back then... no. Don't think like that. Just be this fast now."</FG.Flavor.Brandish.9>
+  <FG.Flavor.Brandish.10>The air hums. {PAWN_nameDef}'s body has started answering before {PAWN_possessive} mind asks, and a small, quiet part of {PAWN_objective} is afraid of that.\n\n"It's fine. It's fine. As long as it moves for them, it can move as fast as it wants."</FG.Flavor.Brandish.10>
+
+  <!-- 8. 50% delirium, Intrepid Strike learned: everything into one blow. -->
+  <FG.Flavor.Intrepid.Title>{PAWN_nameDef}: everything into one strike</FG.Flavor.Intrepid.Title>
+  <FG.Flavor.Intrepid.1>The world narrows to a single point, and {PAWN_nameDef} understands that everything {PAWN_pronoun} has can go into it at once.\n\n"One strike. Everything I am, for {LOVER_nameDef}. If that's what it costs, I can pay it."</FG.Flavor.Intrepid.1>
+  <FG.Flavor.Intrepid.2>"{PARENT_nameDef} used to say: don't swing twice when once will do." {PAWN_nameDef}'s knuckles have gone white, and a light that isn't quite {PAWN_possessive} own pools in {PAWN_possessive} fist.\n\n"I understand now. Once will do."</FG.Flavor.Intrepid.2>
+  <FG.Flavor.Intrepid.3>{PAWN_nameDef} breathes in, and the red-haired girl in the corner of {PAWN_possessive} eye breathes in with {PAWN_objective}.\n\n"Whatever stands between {CHILD_nameDef} and the future gets one blow. Just one. It won't need another."</FG.Flavor.Intrepid.3>
+  <FG.Flavor.Intrepid.4>"{SIBLING_nameDef}, remember when we used to arm-wrestle and you always won?" {PAWN_nameDef} smiles too wide, eyes too bright.\n\n"You wouldn't win now. Nobody would. That's what scares me."</FG.Flavor.Intrepid.4>
+  <FG.Flavor.Intrepid.5>Every muscle in {PAWN_nameDef}'s body pulls toward one moment, one point, one hit. The delirium hums approval.\n\n"{FRIEND_nameDef} saved me once. One perfect strike. That's all it ever takes, isn't it? I'll make mine count for {FRIEND_objective}."</FG.Flavor.Intrepid.5>
+  <FG.Flavor.Intrepid.6>{PAWN_nameDef} hears a voice whisper, "All of it. Give all of it," and isn't sure whose voice it is.\n\n"{BESTFRIEND_nameDef}... if you ever see me hit something like that, don't cheer. Just get me out of there before I do it again."</FG.Flavor.Intrepid.6>
+  <FG.Flavor.Intrepid.7>"{COLONY} doesn't need someone who can fight forever." {PAWN_nameDef}'s voice has gone strangely calm. "It needs someone who can end a fight. With one blow, if it has to."</FG.Flavor.Intrepid.7>
+  <FG.Flavor.Intrepid.8>"{DAYS}, and every one of them is in this hand now." {PAWN_nameDef} closes it slowly. Something hot and bright closes with it.\n\n"I'll spend them all at once if I have to. That's what they were for."</FG.Flavor.Intrepid.8>
+  <FG.Flavor.Intrepid.9>{PAWN_nameDef} remembers {EVENT}, and the memory burns down into a single bright point.\n\n"Everything that mattered, in one moment. That's how it felt then. That's how my strikes will feel now."</FG.Flavor.Intrepid.9>
+  <FG.Flavor.Intrepid.10>The red-haired girl smiles from somewhere just out of sight. {PAWN_nameDef} doesn't look at her. {PAWN_pronoun} looks at {PAWN_possessive} fist instead, glowing faintly.\n\n"Everything into one strike. Fine. But I choose what I strike. Not you."</FG.Flavor.Intrepid.10>
+
+</LanguageData>

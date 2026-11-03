@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Optional: without this file (and Sounds/) the 90% frenzy simply plays no song (VenenumMusic).
+     Recordings: "Scarborough Fair" (traditional), easy duo arrangement, Free-scores.com #236864 - the complete duo and each
+     violin part on its own (free to use; checked 2026-10-02). At 90% delirium one of them plays at random.
+     VenenumMusic and Homebrew Battle Music take every SongDef whose defName starts with "FG_ScarboroughFair".
+     Commonality 0: never a random pick of the normal music. -->
+<Defs>
+  <SongDef>
+    <defName>FG_ScarboroughFair_Complete</defName>
+    <label>Scarborough Fair (duo)</label>
+    <clipPath>FairyGenes/ScarboroughFair_Complete</clipPath>
+    <commonality>0</commonality>
+    <tense>true</tense>
+  </SongDef>
+  <SongDef>
+    <defName>FG_ScarboroughFair_Violin1</defName>
+    <label>Scarborough Fair (violin I)</label>
+    <clipPath>FairyGenes/ScarboroughFair_Violin1</clipPath>
+    <commonality>0</commonality>
+    <tense>true</tense>
+  </SongDef>
+  <SongDef>
+    <defName>FG_ScarboroughFair_Violin2</defName>
+    <label>Scarborough Fair (violin II)</label>
+    <clipPath>FairyGenes/ScarboroughFair_Violin2</clipPath>
+    <commonality>0</commonality>
+    <tense>true</tense>
+  </SongDef>
+</Defs>

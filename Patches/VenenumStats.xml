@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Venenum's melee attack speed rises with its heat (FairyGenes.StatPart_VenenumAttackSpeed). MeleeCooldownFactor
+       has no parts list in vanilla; another mod may have added one. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName="MeleeCooldownFactor"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="MeleeCooldownFactor"]/parts</xpath>
+      <value>
+        <li Class="FairyGenes.StatPart_VenenumAttackSpeed"/>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="MeleeCooldownFactor"]</xpath>
+      <value>
+        <parts>
+          <li Class="FairyGenes.StatPart_VenenumAttackSpeed"/>
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Psychic delirium's psychic sensitivity scales with it, +35% to +500% (FairyGenes.StatPart_DeliriumSensitivity). -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName="PsychicSensitivity"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="PsychicSensitivity"]/parts</xpath>
+      <value>
+        <li Class="FairyGenes.StatPart_DeliriumSensitivity"/>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="PsychicSensitivity"]</xpath>
+      <value>
+        <parts>
+          <li Class="FairyGenes.StatPart_DeliriumSensitivity"/>
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Venenum's flight time (FairyGenes.StatPart_VenenumFlightTime), a StatPart rather than the gene's statOffsets so the
+       gene tooltip does not list "Max flight time +5000". -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName="MaxFlightTime"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="MaxFlightTime"]/parts</xpath>
+      <value>
+        <li Class="FairyGenes.StatPart_VenenumFlightTime"/>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="MaxFlightTime"]</xpath>
+      <value>
+        <parts>
+          <li Class="FairyGenes.StatPart_VenenumFlightTime"/>
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Venenum's passive fire immunity (FairyGenes.StatPart_VenenumFireproof): the gene's, on or off. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName="Flammability"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="Flammability"]/parts</xpath>
+      <value>
+        <li Class="FairyGenes.StatPart_VenenumFireproof"/>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="Flammability"]</xpath>
+      <value>
+        <parts>
+          <li Class="FairyGenes.StatPart_VenenumFireproof"/>
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>

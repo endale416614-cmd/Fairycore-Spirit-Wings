@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- The 20 wing designs (FairyWingVariantDef), their flap/glow graphic states and fly animations are generated
+       into FairyWings_Generated.xml by tools/gen_defs.py. -->
+
+  <PawnRenderNodeTagDef>
+    <defName>FG_WingLeft</defName>
+  </PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef>
+    <defName>FG_WingRight</defName>
+  </PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef>
+    <defName>FG_GlowLeft</defName>
+  </PawnRenderNodeTagDef>
+  <PawnRenderNodeTagDef>
+    <defName>FG_GlowRight</defName>
+  </PawnRenderNodeTagDef>
+
+  <!-- ================================================================ Venenum -->
+
+  <!-- The Wings gene category: Venenum, and at startup every other gene with the exclusion tag "Wings" (Source/VenenumGenes.cs). -->
+  <GeneCategoryDef>
+    <defName>FG_Wings</defName>
+    <label>wings</label>
+    <displayPriorityInXenotype>480</displayPriorityInXenotype>
+    <displayPriorityInGenepack>480</displayPriorityInGenepack>
+  </GeneCategoryDef>
+
+  <GeneDef>
+    <defName>FG_Venenum</defName>
+    <label>Venenum</label>
+    <description>What are you doing at the end of the world? Are you busy? Will you save us?\n\nVenenum is a dormant psychic power that awakens into radiant wings, granting power meant to carry its bearer through impossible odds for those they hold dear.\n\n&lt;color=#E6E64C&gt;Effects:&lt;/color&gt;\n - Flight\n - Increased evasion\n - Increased psychic sensitivity\n - Fire immunity\n - Ageless\n\n&lt;color=#E6E64C&gt;Gives abilities:&lt;/color&gt;\n - Flutter Dash\n - Momentum\n - Indomitable\n - Brandish\n - Avalanche</description>
+    <iconPath>FairyGenes/UI/Gene_Venenum</iconPath>
+    <geneClass>FairyGenes.Gene_Venenum</geneClass>
+    <displayCategory>FG_Wings</displayCategory>
+    <displayOrderInCategory>100</displayOrderInCategory>
+    <descriptionHyperlinks>
+      <AbilityDef>FG_FairyFlutter</AbilityDef>
+      <AbilityDef>FG_FairysGate</AbilityDef>
+      <HediffDef>FG_VenenumActive</HediffDef>
+      <HediffDef>FG_Momentum</HediffDef>
+      <HediffDef>FG_PsychicDelirium</HediffDef>
+    </descriptionHyperlinks>
+    <biostatCpx>10</biostatCpx>
+    <biostatMet>20</biostatMet>
+    <exclusionTags>
+      <li>FG_Venenum</li>
+    </exclusionTags>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>fairy</symbol></li>
+        <li><symbol>pixie</symbol></li>
+        <li><symbol>venom</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>flutter</symbol></li>
+        <li><symbol>fae</symbol></li>
+        <li><symbol>venom</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>wing</symbol></li>
+        <li><symbol>fae</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <!-- Lesser Venenum: wings and flight, for anyone, plus about 50% evasion in flight (Gene_LesserVenenum). -->
+  <GeneDef>
+    <defName>FG_LesserVenenum</defName>
+    <label>lesser Venenum</label>
+    <description>What are you doing at the end of the world? Are you busy? Will you save us?\n\nA faint echo of Venenum that awakens into radiant wings and lets its bearer take to the sky.\n\n&lt;color=#E6E64C&gt;Effects:&lt;/color&gt;\n - Flight\n - Increased evasion</description>
+    <iconPath>FairyGenes/UI/Gene_LesserVenenum</iconPath>
+    <geneClass>FairyGenes.Gene_LesserVenenum</geneClass>
+    <displayCategory>FG_Wings</displayCategory>
+    <displayOrderInCategory>110</displayOrderInCategory>
+    <biostatCpx>5</biostatCpx>
+    <biostatMet>0</biostatMet>
+    <exclusionTags>
+      <li>FG_Venenum</li>
+    </exclusionTags>
+  </GeneDef>
+
+  <!-- The 20 wing genes (FG_Wings_<key>, generated into FairyWings_Generated.xml): 0 complexity, one
+       chosen at random when a xenotype lists several. On their own they are a pair of wings on the back, always shown,
+       flapping gently, no flight. With Venenum they are its wings: shown only while it is on (Source/FairyRender.cs).
+       Venenum needs one in the xenotype editor (Patch_GeneCreationDialog_CanAccept_VenenumWings). -->
+  <GeneDef Name="FG_WingDesignBase" Abstract="True">
+    <displayCategory>FG_Wings</displayCategory>
+    <biostatCpx>0</biostatCpx>
+    <biostatMet>0</biostatMet>
+    <randomChosen>true</randomChosen>
+    <exclusionTags>
+      <li>Wings</li>
+    </exclusionTags>
+    <statOffsets>
+      <PawnBeauty>2</PawnBeauty>
+    </statOffsets>
+    <renderNodeProperties>
+      <li Class="FairyGenes.PawnRenderNodeProperties_FairyWing">
+        <debugLabel>wing glow L</debugLabel>
+        <nodeClass>FairyGenes.PawnRenderNode_FairyWing</nodeClass>
+        <workerClass>FairyGenes.PawnRenderNodeWorker_FairyWing</workerClass>
+        <half>ScreenLeft</half>
+        <glow>true</glow>
+        <tagDef>FG_GlowLeft</tagDef>
+        <texPath>FairyGenes/Glow/Monarch/Rest_L</texPath>
+        <shaderTypeDef>MoteGlow</shaderTypeDef>
+        <drawSize>(0.7,1.4)</drawSize>
+        <parentTagDef>Body</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <baseLayer>-11</baseLayer>
+        <drawData>
+          <dataNorth><layer>47</layer></dataNorth>
+        </drawData>
+      </li>
+      <li Class="FairyGenes.PawnRenderNodeProperties_FairyWing">
+        <debugLabel>wing glow R</debugLabel>
+        <nodeClass>FairyGenes.PawnRenderNode_FairyWing</nodeClass>
+        <workerClass>FairyGenes.PawnRenderNodeWorker_FairyWing</workerClass>
+        <half>ScreenRight</half>
+        <glow>true</glow>
+        <tagDef>FG_GlowRight</tagDef>
+        <texPath>FairyGenes/Glow/Monarch/Rest_R</texPath>
+        <shaderTypeDef>MoteGlow</shaderTypeDef>
+        <drawSize>(0.7,1.4)</drawSize>
+        <parentTagDef>Body</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <baseLayer>-11</baseLayer>
+        <drawData>
+          <dataNorth><layer>47</layer></dataNorth>
+        </drawData>
+      </li>
+      <li Class="FairyGenes.PawnRenderNodeProperties_FairyWing">
+        <debugLabel>wing L</debugLabel>
+        <nodeClass>FairyGenes.PawnRenderNode_FairyWing</nodeClass>
+        <workerClass>FairyGenes.PawnRenderNodeWorker_FairyWing</workerClass>
+        <half>ScreenLeft</half>
+        <tagDef>FG_WingLeft</tagDef>
+        <texPath>FairyGenes/Wings/Monarch/Rest_L</texPath>
+        <shaderTypeDef>Transparent</shaderTypeDef>
+        <drawSize>(0.7,1.4)</drawSize>
+        <parentTagDef>Body</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <baseLayer>-10</baseLayer>
+        <drawData>
+          <dataNorth><layer>48</layer></dataNorth>
+        </drawData>
+      </li>
+      <li Class="FairyGenes.PawnRenderNodeProperties_FairyWing">
+        <debugLabel>wing R</debugLabel>
+        <nodeClass>FairyGenes.PawnRenderNode_FairyWing</nodeClass>
+        <workerClass>FairyGenes.PawnRenderNodeWorker_FairyWing</workerClass>
+        <half>ScreenRight</half>
+        <tagDef>FG_WingRight</tagDef>
+        <texPath>FairyGenes/Wings/Monarch/Rest_R</texPath>
+        <shaderTypeDef>Transparent</shaderTypeDef>
+        <drawSize>(0.7,1.4)</drawSize>
+        <parentTagDef>Body</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <baseLayer>-10</baseLayer>
+        <drawData>
+          <dataNorth><layer>48</layer></dataNorth>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <!-- ================================================================ the fairy races
+       All inheritable and female (male too with the Dev Mode switch); in every humanlike faction's xenotype mix (Source/FairyXenotype.cs):
+       monarch fairy 0.1%, court fairy 0.5%, lesser fairy 1%. -->
+
+  <XenotypeDef>
+    <defName>FG_Fairy</defName>
+    <label>monarch fairy</label>
+    <description>A mysterious human-like race, exclusively female, who can manifest a pair of beautiful glowing psychic wings.</description>
+    <descriptionShort>A mysterious human-like race, exclusively female, who can manifest a pair of beautiful glowing psychic wings.</descriptionShort>
+    <iconPath>FairyGenes/UI/Xenotype_MonarchFairy</iconPath>
+    <inheritable>true</inheritable>
+    <displayPriority>-100</displayPriority>
+    <factionlessGenerationWeight>0</factionlessGenerationWeight>
+    <genes>
+      <li>Immunity_SuperStrong</li>
+      <li>WoundHealing_SuperFast</li>
+      <li>Superclotting</li>
+      <li>PsychicAbility_Extreme</li>
+      <li>PsychicBonding</li>
+      <li>FG_Venenum</li>
+      <li>MeleeDamage_Strong</li>
+      <li>KindInstinct</li>
+      <li>Delicate</li>
+      <li>Beauty_Beautiful</li>
+      <li>Body_Standard</li>
+      <li>Hair_SnowWhite</li>
+      <li>Hair_Blonde</li>
+      <li>Hair_LightGreen</li>
+      <li>Hair_Pink</li>
+      <li>Hair_LightPurple</li>
+      <li>Hair_BrightRed</li>
+      <li>DarkVision</li>
+      <li>Unstoppable</li>
+      <li>AptitudeRemarkable_Melee</li>
+      <li>FG_Wings_Beetle</li>
+      <li>FG_Wings_Cicada</li>
+      <li>FG_Wings_Damselfly</li>
+      <li>FG_Wings_Dragonfly</li>
+      <li>FG_Wings_Firefly</li>
+      <li>FG_Wings_Grasshopper</li>
+      <li>FG_Wings_Lacewing</li>
+      <li>FG_Wings_Moth</li>
+      <li>FG_Wings_PrayingMantis</li>
+      <li>FG_Wings_Wasp</li>
+      <li>FG_Wings_BlueMorpho</li>
+      <li>FG_Wings_CommonBlue</li>
+      <li>FG_Wings_Glasswing</li>
+      <li>FG_Wings_LunaMoth</li>
+      <li>FG_Wings_Monarch</li>
+      <li>FG_Wings_PaperKite</li>
+      <li>FG_Wings_Peacock</li>
+      <li>FG_Wings_Birdwing</li>
+      <li>FG_Wings_RedAdmiral</li>
+      <li>FG_Wings_Swallowtail</li>
+    </genes>
+  </XenotypeDef>
+
+  <XenotypeDef>
+    <defName>FG_CourtFairy</defName>
+    <label>court fairy</label>
+    <description>A mysterious human-like race, exclusively female, whose fainter psychic gift still lets them take to the sky on glowing wings.</description>
+    <descriptionShort>A mysterious human-like race, exclusively female, whose fainter psychic gift still lets them take to the sky on glowing wings.</descriptionShort>
+    <iconPath>FairyGenes/UI/Xenotype_CourtFairy</iconPath>
+    <inheritable>true</inheritable>
+    <displayPriority>-101</displayPriority>
+    <factionlessGenerationWeight>0</factionlessGenerationWeight>
+    <genes>
+      <li>Body_Standard</li>
+      <li>Hair_SnowWhite</li>
+      <li>Hair_Blonde</li>
+      <li>Hair_LightGreen</li>
+      <li>Hair_Pink</li>
+      <li>Hair_LightPurple</li>
+      <li>Hair_BrightRed</li>
+      <li>FG_LesserVenenum</li>
+      <li>FG_Wings_Beetle</li>
+      <li>FG_Wings_Cicada</li>
+      <li>FG_Wings_Damselfly</li>
+      <li>FG_Wings_Dragonfly</li>
+      <li>FG_Wings_Firefly</li>
+      <li>FG_Wings_Grasshopper</li>
+      <li>FG_Wings_Lacewing</li>
+      <li>FG_Wings_Moth</li>
+      <li>FG_Wings_PrayingMantis</li>
+      <li>FG_Wings_Wasp</li>
+      <li>FG_Wings_BlueMorpho</li>
+      <li>FG_Wings_CommonBlue</li>
+      <li>FG_Wings_Glasswing</li>
+      <li>FG_Wings_LunaMoth</li>
+      <li>FG_Wings_Monarch</li>
+      <li>FG_Wings_PaperKite</li>
+      <li>FG_Wings_Peacock</li>
+      <li>FG_Wings_Birdwing</li>
+      <li>FG_Wings_RedAdmiral</li>
+      <li>FG_Wings_Swallowtail</li>
+    </genes>
+  </XenotypeDef>
+
+  <XenotypeDef>
+    <defName>FG_LesserFairy</defName>
+    <label>lesser fairy</label>
+    <description>A mysterious human-like race, exclusively female, born with a pair of beautiful wings that cannot carry them into the sky.</description>
+    <descriptionShort>A mysterious human-like race, exclusively female, born with a pair of beautiful wings that cannot carry them into the sky.</descriptionShort>
+    <iconPath>FairyGenes/UI/Xenotype_LesserFairy</iconPath>
+    <inheritable>true</inheritable>
+    <displayPriority>-102</displayPriority>
+    <factionlessGenerationWeight>0</factionlessGenerationWeight>
+    <genes>
+      <li>Body_Standard</li>
+      <li>Hair_SnowWhite</li>
+      <li>Hair_Blonde</li>
+      <li>Hair_LightGreen</li>
+      <li>Hair_Pink</li>
+      <li>Hair_LightPurple</li>
+      <li>Hair_BrightRed</li>
+      <li>FG_Wings_Beetle</li>
+      <li>FG_Wings_Cicada</li>
+      <li>FG_Wings_Damselfly</li>
+      <li>FG_Wings_Dragonfly</li>
+      <li>FG_Wings_Firefly</li>
+      <li>FG_Wings_Grasshopper</li>
+      <li>FG_Wings_Lacewing</li>
+      <li>FG_Wings_Moth</li>
+      <li>FG_Wings_PrayingMantis</li>
+      <li>FG_Wings_Wasp</li>
+      <li>FG_Wings_BlueMorpho</li>
+      <li>FG_Wings_CommonBlue</li>
+      <li>FG_Wings_Glasswing</li>
+      <li>FG_Wings_LunaMoth</li>
+      <li>FG_Wings_Monarch</li>
+      <li>FG_Wings_PaperKite</li>
+      <li>FG_Wings_Peacock</li>
+      <li>FG_Wings_Birdwing</li>
+      <li>FG_Wings_RedAdmiral</li>
+      <li>FG_Wings_Swallowtail</li>
+    </genes>
+  </XenotypeDef>
+
+  <XenotypeDef>
+    <defName>FG_PixieFairy</defName>
+    <label>pixie</label>
+    <description>A mysterious human-like race, exclusively female, who stay as small as children all their lives and dart through the sky on glowing wings.</description>
+    <descriptionShort>A mysterious human-like race, exclusively female, who stay as small as children all their lives and dart through the sky on glowing wings.</descriptionShort>
+    <iconPath>FairyGenes/UI/Xenotype_PixieFairy</iconPath>
+    <inheritable>true</inheritable>
+    <displayPriority>-103</displayPriority>
+    <factionlessGenerationWeight>0</factionlessGenerationWeight>
+    <genes>
+      <li>Body_Standard</li>
+      <li>Hair_SnowWhite</li>
+      <li>Hair_Blonde</li>
+      <li>Hair_LightGreen</li>
+      <li>Hair_Pink</li>
+      <li>Hair_LightPurple</li>
+      <li>Hair_BrightRed</li>
+      <li>FG_Pixie</li>
+      <li>FG_Wings_Beetle</li>
+      <li>FG_Wings_Cicada</li>
+      <li>FG_Wings_Damselfly</li>
+      <li>FG_Wings_Dragonfly</li>
+      <li>FG_Wings_Firefly</li>
+      <li>FG_Wings_Grasshopper</li>
+      <li>FG_Wings_Lacewing</li>
+      <li>FG_Wings_Moth</li>
+      <li>FG_Wings_PrayingMantis</li>
+      <li>FG_Wings_Wasp</li>
+      <li>FG_Wings_BlueMorpho</li>
+      <li>FG_Wings_CommonBlue</li>
+      <li>FG_Wings_Glasswing</li>
+      <li>FG_Wings_LunaMoth</li>
+      <li>FG_Wings_Monarch</li>
+      <li>FG_Wings_PaperKite</li>
+      <li>FG_Wings_Peacock</li>
+      <li>FG_Wings_Birdwing</li>
+      <li>FG_Wings_RedAdmiral</li>
+      <li>FG_Wings_Swallowtail</li>
+    </genes>
+  </XenotypeDef>
+
+  <HediffDef>
+    <defName>FG_VenenumActive</defName>
+    <label>Venenum</label>
+    <description>A soul manifested as glowing wings of psychic energy, shielding its bearer from fire and granting them the power to protect their loved ones, at a price.</description>
+    <hediffClass>FairyGenes.Hediff_VenenumActive</hediffClass>
+    <isBad>false</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <initialSeverity>1.0</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <defaultLabelColor>(0.75,0.6,1)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <PsychicSensitivity>2</PsychicSensitivity>
+          <MeleeDodgeChance>3</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>FG_Momentum</defName>
+    <label>momentum</label>
+    <description>High-speed flight builds devastating aerial momentum.</description>
+    <hediffClass>FairyGenes.Hediff_Momentum</hediffClass>
+    <isBad>false</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <initialSeverity>1.0</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <defaultLabelColor>(1,0.55,0.85)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>FG_PsychicDelirium</defName>
+    <label>psychic delirium</label>
+    <description>Forcing Venenum past its neural heat limit opens the carrier's mind to something unknown.
+
+They begin seeing a red-haired girl, hearing her incomprehensible words inside their thoughts. Each use makes the visions clearer and reality harder to trust.</description>
+    <hediffClass>FairyGenes.Hediff_PsychicDelirium</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>0.05</initialSeverity>
+    <minSeverity>0</minSeverity>
+    <maxSeverity>1</maxSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <defaultLabelColor>(0.85,0.45,0.95)</defaultLabelColor>
+    <stages>
+      <!-- Delirium carries its own consciousness: a growing bonus that counters neural heat's psychic
+           breakdown (-25% minor, -50% major), fully at the frenzy. A psychic shock (lance) still caps it: setMax wins. -->
+      <li>
+        <label>faint</label>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>0.05</offset></li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.2</minSeverity>
+        <label>unsettling</label>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>0.15</offset></li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.4</minSeverity>
+        <label>fractured</label>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>0.25</offset></li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.6</minSeverity>
+        <label>severe</label>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>0.35</offset></li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>frenzied</label>
+        <lifeThreatening>true</lifeThreatening>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>0.5</offset></li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <MentalStateDef ParentName="WanderPsychotic">
+    <defName>FG_DeliriumConfusion</defName>
+    <label>delirious confusion</label>
+    <nameColor>(0.85, 0.6, 1)</nameColor>
+    <minTicksBeforeRecovery>6000</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>15000</maxTicksBeforeRecovery>
+    <recoveryMtbDays>0.1</recoveryMtbDays>
+    <recoveryMessage>{0} has found the way back, for now.</recoveryMessage>
+    <beginLetterLabel>delirium</beginLetterLabel>
+    <beginLetter>{0} no longer knows where the dream ends.</beginLetter>
+    <baseInspectLine>Mental state: Delirious confusion</baseInspectLine>
+  </MentalStateDef>
+
+  <AbilityDef>
+    <defName>FG_FairysGate</defName>
+    <label>Fairy's Gate</label>
+    <description>DO NOT OPEN FAIRY'S GATE.
+
+The carrier can tear open a passage to the realm of fairies. Psychic power floods through the breach, answering the questions gnawing at their mind.
+
+Opening the Gate is fatal. The resulting psychic blast is weaker than the final eruption, but can still kill anyone nearby. It burns all psyfocus; its radius and damage grow with psychic sensitivity and the psyfocus burned.
+
+The Gate takes 10 seconds to open. Once it has begun, nothing but death can stop it.</description>
+    <iconPath>FairyGenes/UI/Ability_FairysGate</iconPath>
+    <!-- Downed but conscious, it opens straight from the button (no casting job). -->
+    <gizmoClass>FairyGenes.Command_FairysGate</gizmoClass>
+    <aiCanUse>false</aiCanUse>
+    <targetRequired>false</targetRequired>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <!-- No warm-up (here and on the flutter dash): a save made mid warm-up keeps the ability's verb in the pawn's stance,
+           and without Fairycore that pawn would be stuck forever (Stance_Warmup with a null verb). -->
+      <warmupTime>0</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="FairyGenes.CompProperties_AbilityFairysGate" />
+    </comps>
+  </AbilityDef>
+
+  <!-- Fairy's Gate opening: 10 s, committed; the Time Leap effect fades in (Hediff_FairysGateOpening). -->
+  <HediffDef>
+    <defName>FG_FairysGateOpening</defName>
+    <label>opening Fairy's Gate</label>
+    <description>The Gate is opening. Time itself leans towards it, and nothing can close it now.</description>
+    <hediffClass>FairyGenes.Hediff_FairysGateOpening</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <defaultLabelColor>(0.55, 0.85, 1)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+  </HediffDef>
+
+  <AbilityDef>
+    <defName>FG_FairyFlutter</defName>
+    <label>flutter dash</label>
+    <description>Dash through the air in a burst of wings and glittering dust, restoring Momentum.</description>
+    <iconPath>FairyGenes/UI/Ability_FairyFlutter</iconPath>
+    <gizmoClass>FairyGenes.Command_FlutterDash</gizmoClass>
+    <cooldownTicksRange>240</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>FairyGenes.Verb_CastAbilityFairyFlight</verbClass>
+      <label>flutter</label>
+      <violent>false</violent>
+      <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+      <warmupTime>0</warmupTime>
+      <range>24.9</range>
+      <requireLineOfSight>true</requireLineOfSight>
+      <flightEffecterDef>FG_FlutterDash</flightEffecterDef>
+      <soundCast>Longjump_Jump</soundCast>
+      <soundLanding>Longjump_Land</soundLanding>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <jobDef>CastJump</jobDef>
+    <comps>
+      <li Class="FairyGenes.CompProperties_AbilityFairyFlightCost">
+        <psyfocusCost>0.10</psyfocusCost>
+        <heat>0.025</heat>
+        <hungerCost>0.03</hungerCost>
+        <hungerThreshold>0.2</hungerThreshold>
+        <restCost>0.015</restCost>
+        <restThreshold>0.2</restThreshold>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>FG_WingFlyer</defName>
+    <label>flying</label>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <pawnFlyer Inherit="False">
+      <flightDurationMin>0.1</flightDurationMin>
+      <flightSpeed>32</flightSpeed>
+      <workerClass>PawnFlyerWorker</workerClass>
+      <heightFactor>2</heightFactor>
+      <!-- The vanilla jump's arc and easing (sanguophage longjump), at the fast flutter speed above. -->
+      <progressCurve>
+        <points>
+          <li>(0, 0)</li>
+          <li>(0.1, 0.15)</li>
+          <li>(1, 1)</li>
+        </points>
+      </progressCurve>
+    </pawnFlyer>
+  </ThingDef>
+
+  <!-- Knocked out of the air by a psychic shock (Source/ShockFall.cs): from flight height to the ground over 3 cells, tumbling. -->
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>FG_ShockFallFlyer</defName>
+    <label>falling</label>
+    <thingClass>FairyGenes.ShockFallFlyer</thingClass>
+    <altitudeLayer>Pawn</altitudeLayer>
+    <pawnFlyer Inherit="False">
+      <flightDurationMin>1.5</flightDurationMin>
+      <flightSpeed>2</flightSpeed>
+      <workerClass>FairyGenes.ShockFallFlyerWorker</workerClass>
+      <heightFactor>0.6</heightFactor>
+    </pawnFlyer>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>FG_FlutterDash</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>FG_Sparkle</fleckDef>
+        <burstCount>8~12</burstCount>
+        <scale>0.15~0.35</scale>
+        <speed>0.6~1.2</speed>
+        <angle>0~360</angle>
+        <rotationRate>-90~90</rotationRate>
+        <positionRadius>0.3</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>FG_Sparkle</fleckDef>
+        <scale>0.1~0.25</scale>
+        <speed>0.1~0.4</speed>
+        <angle>0~360</angle>
+        <rotationRate>-60~60</rotationRate>
+        <positionRadius>0.35</positionRadius>
+        <ticksBetweenMotes>2</ticksBetweenMotes>
+        <maxMoteCount>20</maxMoteCount>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <scale>1.2~1.5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <fleckDef>FG_AirPuff</fleckDef>
+        <ticksBetweenMotes>2</ticksBetweenMotes>
+        <maxMoteCount>6</maxMoteCount>
+        <angle>0~180</angle>
+        <rotation>0~360</rotation>
+        <rotationRate>60~180</rotationRate>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+    </children>
+    <positionRadius>0.1</positionRadius>
+  </EffecterDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>FG_Sparkle</defName>
+    <graphicData>
+      <texPath>FairyGenes/Effect/Sparkle</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.05</fadeInTime>
+    <solidTime>0.3</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>FG_AirPuff</defName>
+    <graphicData>
+      <texPath>Things/Mote/AirPuff</texPath>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.03</fadeInTime>
+    <solidTime>0.05</solidTime>
+    <fadeOutTime>0.3</fadeOutTime>
+    <growthRate>0.2</growthRate>
+  </FleckDef>
+
+
+  <!-- ==================================================================== delirium abilities
+       Indomitable from the first moment of delirium (Aspiration Virtue's own when that mod is active, at its weakest
+       level; this standalone copy otherwise), Brandish at 25%, Intrepid Strike at 50%, Fairy's Gate at 75%. -->
+
+  <AbilityDef>
+    <defName>FG_Indomitable</defName>
+    <label>indomitable</label>
+    <description>Many fall in the face of chaos, but not this one. Not today.</description>
+    <iconPath>FairyGenes/UI/Ability_Indomitable</iconPath>
+    <gizmoClass>FairyGenes.Command_DeliriumAbility</gizmoClass>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <targetRequired>false</targetRequired>
+    <aiCanUse>false</aiCanUse>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <statBases>
+      <Ability_Duration>41.667</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>FairyGenes.CompAbilityEffect_IndomitableSensitivity</compClass>
+        <hediffDef>FG_Indomitable</hediffDef>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <!-- Aspiration Virtue's weakest real level (one completed aspiration): same numbers. -->
+  <HediffDef>
+    <defName>FG_Indomitable</defName>
+    <label>indomitable</label>
+    <description>Many fall in the face of chaos, but not this one. Not today.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1.0, 0.75, 0.35)</defaultLabelColor>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>0.5</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>2500</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <stages>
+      <!-- Holding on (cast by hand): half of Last Stand. Stuns last half as long (Patch_StunHandler_StunFor_Indomitable). -->
+      <li>
+        <label>holding on</label>
+        <overrideTooltip>Many fall in the face of chaos, but not this one. Not today.</overrideTooltip>
+        <painFactor>0.5</painFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>0.5</offset></li>
+          <li><capacity>Manipulation</capacity><offset>0.5</offset></li>
+          <li><capacity>Moving</capacity><offset>0.5</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.5</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.5</offset></li>
+        </capMods>
+        <statOffsets>
+          <PainShockThreshold>0.5</PainShockThreshold>
+        </statOffsets>
+      </li>
+      <!-- Last Stand (Auto, against a psychic shock): no pain, no stun. -->
+      <li>
+        <minSeverity>1</minSeverity>
+        <label>last stand</label>
+        <overrideTooltip>A moment of valor shines brightest against a backdrop of despair.</overrideTooltip>
+        <painFactor>0</painFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>1.0</offset></li>
+          <li><capacity>Manipulation</capacity><offset>1.0</offset></li>
+          <li><capacity>Moving</capacity><offset>1.0</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>1.0</offset></li>
+          <li><capacity>Breathing</capacity><offset>1.0</offset></li>
+        </capMods>
+        <statOffsets>
+          <PainShockThreshold>1.0</PainShockThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <AbilityDef>
+    <defName>FG_Brandish</defName>
+    <label>brandish</label>
+    <description>The carrier lets Venenum seize their body for a single impossible burst of speed.
+
++1000% melee attack speed for 1 second, longer with psychic sensitivity. Every blow is struck with the blade or its tip, never the handle; it drives its target back a tile and the carrier presses forward with it. A kill during it restores Momentum at once. Needs a melee weapon in hand.</description>
+    <iconPath>FairyGenes/UI/Ability_Brandish</iconPath>
+    <gizmoClass>FairyGenes.Command_DeliriumAbility</gizmoClass>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <hostile>false</hostile>
+    <targetRequired>false</targetRequired>
+    <aiCanUse>false</aiCanUse>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="FairyGenes.CompProperties_AbilityDelirium">
+        <threshold>0.25</threshold>
+        <psyfocus>0.10</psyfocus>
+        <heat>0.025</heat>
+        <delirium>0.025</delirium>
+        <hediff>FG_Brandish</hediff>
+        <resetMeleeCooldown>true</resetMeleeCooldown>
+        <requiresMeleeWeapon>true</requiresMeleeWeapon>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef>
+    <defName>FG_Brandish</defName>
+    <label>brandish</label>
+    <description>Venenum has taken the body. It moves faster than thought.</description>
+    <hediffClass>FairyGenes.Hediff_VenenumBound</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1,0.55,0.85)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+  </HediffDef>
+
+  <AbilityDef>
+    <defName>FG_IntrepidStrike</defName>
+    <label>avalanche</label>
+    <description>The carrier pours everything into the edge of the blade.
+
+For 1 second, longer with psychic sensitivity, every melee blow is struck with the blade's edge and cleaves: each enemy beside its target takes the whole of that blow. Needs a melee weapon in hand.</description>
+    <iconPath>FairyGenes/UI/Ability_IntrepidStrike</iconPath>
+    <gizmoClass>FairyGenes.Command_DeliriumAbility</gizmoClass>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <hostile>false</hostile>
+    <targetRequired>false</targetRequired>
+    <aiCanUse>false</aiCanUse>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>0</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <requireLineOfSight>false</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="FairyGenes.CompProperties_AbilityDelirium">
+        <threshold>0.5</threshold>
+        <psyfocus>0.30</psyfocus>
+        <heat>0.10</heat>
+        <delirium>0.05</delirium>
+        <hediff>FG_IntrepidStrike</hediff>
+        <requiresMeleeWeapon>true</requiresMeleeWeapon>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef>
+    <defName>FG_IntrepidStrike</defName>
+    <label>avalanche</label>
+    <description>Everything gathered into the edge of the blade: every blow cleaves through whatever stands beside its target.</description>
+    <hediffClass>FairyGenes.Hediff_VenenumBound</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1,0.55,0.85)</defaultLabelColor>
+    <comps>
+      <!-- 1 second x (1 + psychic sensitivity), as Brandish: every blow in it cleaves in full (VenenumMomentum.Cleave) -->
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+  </HediffDef>
+
+
+  <!-- Fairycore's half of Aspiration Virtue's Indomitable for a delirium carrier: holding on, or Last
+       Stand when a psychic shock set it off; goes when AV's does. Lethal capacities: in the death guard (LifeUnsafe). -->
+  <HediffDef>
+    <defName>FG_IndomitableResolve</defName>
+    <label>fairy's will</label>
+    <description>Many fall in the face of chaos, but not this one. Not today.</description>
+    <hediffClass>FairyGenes.Hediff_IndomitableResolve</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>0.5</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <defaultLabelColor>(1.0, 0.75, 0.35)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <stages>
+      <!-- Holding on (cast by hand): half of Last Stand. Stuns last half as long (Patch_StunHandler_StunFor_Indomitable). -->
+      <li>
+        <label>holding on</label>
+        <overrideTooltip>Many fall in the face of chaos, but not this one. Not today.</overrideTooltip>
+        <painFactor>0.5</painFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>0.5</offset></li>
+          <li><capacity>Manipulation</capacity><offset>0.5</offset></li>
+          <li><capacity>Moving</capacity><offset>0.5</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.5</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.5</offset></li>
+        </capMods>
+        <statOffsets>
+          <PainShockThreshold>0.5</PainShockThreshold>
+        </statOffsets>
+      </li>
+      <!-- Last Stand (Auto, against a psychic shock): no pain, no stun. -->
+      <li>
+        <minSeverity>1</minSeverity>
+        <label>last stand</label>
+        <overrideTooltip>A moment of valor shines brightest against a backdrop of despair.</overrideTooltip>
+        <painFactor>0</painFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>1.0</offset></li>
+          <li><capacity>Manipulation</capacity><offset>1.0</offset></li>
+          <li><capacity>Moving</capacity><offset>1.0</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>1.0</offset></li>
+          <li><capacity>Breathing</capacity><offset>1.0</offset></li>
+        </capMods>
+        <statOffsets>
+          <PainShockThreshold>1.0</PainShockThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Venenum's +200% psychic sensitivity must not raise the neural heat limit it is measured against
+       (FairyGenes.StatPart_VenenumHeatLimit). Vanilla has a parts list here; another mod may have rebuilt the stat. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName="PsychicEntropyMax"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="PsychicEntropyMax"]/parts</xpath>
+      <value>
+        <li Class="FairyGenes.StatPart_VenenumHeatLimit"/>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="PsychicEntropyMax"]</xpath>
+      <value>
+        <parts>
+          <li Class="FairyGenes.StatPart_VenenumHeatLimit"/>
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>

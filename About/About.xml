@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Fairycore - Spirit Wings</name>
+  <author>Faeris</author>
+  <packageId>homebrew.fairycore</packageId>
+  <!-- Version 2.05 (2026-10-12): skill sounds play at their intended volume; they were nearly silent. -->
+  <!-- Version 2.04 (2026-10-12): Avalanche's second grows with psychic sensitivity, as Brandish's. -->
+  <!-- Version 2.03 (2026-10-12): Avalanche = 1 s of 100% cleave struck with the blade's edge (old effect removed); Brandish strikes with the blade and its tip only. -->
+  <!-- Version 2.02 (2026-10-11): vehicles no longer run over fairies in flight. -->
+  <!-- Version 2.01 (2026-10-10): adult pixies keep their own body type (no red X portrait in adult clothes). -->
+  <!-- Version 2.0 (2026-10-09): performance + size pass. -->
+  <!-- Version 2.06 (2026-10-14): def comments tidied. -->
+  <modVersion>2.06</modVersion>
+  <supportedVersions>
+    <li>1.6</li>
+    <li>1.7</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+    <li>
+      <packageId>Ludeon.RimWorld.Biotech</packageId>
+      <displayName>Biotech</displayName>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ancot.AncotLibrary</li>
+    <li>Ancot.MiliraRace</li>
+  </loadAfter>
+  <description>
+Fairycore - Spirit Wings adds Venenum and Pixie genes in its Wings category, along with twenty wing genes and four fairy races.
+
+When Venenum awakens, a pair of glowing fairy wings unfolds and carries its bearer into the air, for as long as her mind can bear the heat.
+
+FAIRY RACES
+
+- Monarch fairy: Venenum and the fairy look. 0.1% of pawns in every faction.
+- Court fairy: lesser Venenum (flight and some evasion) and the fairy look. 0.5%.
+- Lesser fairy: wings purely for looks. 1%.
+- Pixie: Pixie and the fairy look, the size of a child for life. 0.75%.
+- These presets are female, inheritable, and born with one wing design at random, unless male fairies are allowed in the mod settings.
+- Babies never fly or show wings; fairy children fly with child-sized wings.
+
+PIXIE
+
+- 5 complexity, 0 metabolism. Needs a wing gene; without one, the gene stays dormant.
+- The size of a child for life, while keeping her own body, real age and adult work; adult pixies wear adult clothes.
+- Flight at about 3x movement speed, with 95% evasion like Venenum. Fire and area attacks pass her by, psychic sensitivity +200%, and psyfocus builds while she flies. No heat, delirium or Momentum.
+- Flying makes her hungry and tired 25% faster. Right-click the button to let her fly by herself: when drafted, or always (landing when food or rest runs low, if you choose).
+- Flutter Dash, as with Venenum.
+- Wands or pistols only. A melee blow that lands in flight knocks her back.
+- A Pixie xenogerm puts its bearer to sleep for a day inside a glowing orb, which is hard to hit and can be carried to bed.
+- Pixie children come from a 15-day pregnancy as an orb and hatch a day later as children, already walking.
+- A child of two fairy races is born as one of them.
+- A rare quest brings one Pixie fleeing slavers.
+
+WINGS
+
+- 20 wing genes: 10 insect (beetle, cicada, damselfly, dragonfly, firefly, grasshopper, lacewing, moth, praying mantis, wasp) and 10 butterfly (birdwing, blue morpho, common blue, glasswing, luna moth, monarch, paper kite, peacock, red admiral, swallowtail).
+- 0 complexity, 0 metabolism, +2 beauty. A pawn has one design at a time.
+- On their own, the wings are always visible and flap gently, but cannot fly.
+- With Venenum or lesser Venenum, they stay hidden until it awakens, then fade in with a soft glow.
+- 8-frame flight animations for every facing and vanilla body type.
+
+VENENUM
+
+- 10 complexity, +20 metabolism. Needs a wing gene.
+- Awakens only in women. A man keeps only the metabolism, unless "Allow male fairies" is on in the mod settings (Dev Mode).
+- Always: fire immunity, and Ageless without archites.
+- Switch it on by hand, or right-click the button to let it switch on by itself: when drafted, or always (it lands at the heat limit and flies again once the heat is gone). NPCs switch it on in a fight. Asleep, she lands and the wings fold, unless the wings were switched on by hand with auto mode off.
+- Flight: about 2.8x movement speed over any terrain.
+- Evasion: 95% of shots and melee blows miss. Turret shots, lasers and beams still hit.
+- Psychic sensitivity: +200%. Psyfocus builds while it is on, and switching it on restores 30% (at most once an hour).
+- Momentum: the next melee hit gains +500% damage and armor penetration, stuns, and knocks the target back, with no attack cooldown afterward. Restored by Flutter Dash or when no enemy is within 5 tiles.
+- Attack speed rises with neural heat, from +300% at 120% heat to +500% at 200%.
+- Flutter Dash: a fast 24.9-tile leap through the air. Costs 10% psyfocus (without Royalty, a little food and rest).
+- With Royalty, a carrier without a psylink gains level 1.
+- A psychic shock in flight brings her down to the ground, unless Last Stand blocks it.
+
+NEURAL HEAT
+
+- Heat uses a percentage of the pawn's limit, so a larger heat limit does not extend flight time.
+- Venenum reaches the heat limit in about 2 minutes. There, you choose: push on, or let it burn out until heat falls below 50%. Pushing on also switches the neural heat meter to allow going over the limit. NPCs always burn out.
+- Pushing on is her choice, and her mood decides. Past the limit, heat reaches 200% in about 3 more minutes, causing psychic shock.
+- With Royalty, Venenum uses normal psychic heat. Without Royalty, it uses its own heat bar.
+
+PSYCHIC DELIRIUM
+
+Pushing Venenum past its limit brings on Psychic Delirium, ranging from 0-100%.
+
+- It gets worse with repeated use and rises much faster past the heat limit.
+- Psychic sensitivity rises from +35% up to +500%, and consciousness rises by as much as the delirium itself (+75% at 75%).
+- No random breaks of its own: it raises the mental break threshold by half its severity. When a break comes, it is the delirium's: confusion or vomiting, panic (20%), catatonia (40%), berserk rage or Alzheimer's (60%). While drafted, only berserk rage.
+- It teaches Indomitable (at any severity), Brandish (25%), Avalanche (50%) and Fairy's Gate (75%).
+- Indomitable: she holds on through pain and stuns. Cast against a psychic shock, it becomes Last Stand and blocks it.
+- Brandish: +1000% melee attack speed for a moment.
+- Avalanche: one sweeping hit with +1000% damage and armor penetration through every enemy in the five tiles ahead.
+- Indomitable, Brandish and Avalanche cast themselves by default (right-click to change).
+- NPC fairies never push past the heat limit and never open the Gate.
+- Fairy's Gate: a deliberate psychic blast at half the strength of the final explosion. Using it always kills the fairy and can kill nearby pawns.
+- 90%: Venenum locks on and the fairy enters a frenzy. Pawns incapable of violence fall into confusion instead.
+- 100%: an antigrain-strength psychic explosion, made even stronger by psychic sensitivity. Nothing remains to resurrect.
+- Recreation and conversation reduce it very slowly, until 90%.
+
+LESSER VENENUM
+
+- 5 complexity, 0 metabolism, any gender. Needs a wing gene.
+- Flight at about 1.4x movement speed, with 50% evasion in the air (half of Venenum's), ranged and melee alike. Turret shots, lasers and beams still hit. No heat, delirium, abilities, fire immunity or Ageless.
+- Wing stamina: a full bar is 2 minutes of flight. Sleep refills it; awake, it comes back slowly.
+- When the bar runs out, you choose: land, or keep flying on rest and food, which drain fast. On "always", she lands and flies again once the bar is full. At 50% rest or food, she falls from the sky and gets hurt, and cannot fly again until both are above 50%. NPCs land.
+
+ENEMY SEARCH
+
+- A free button for drafted carriers of Venenum or lesser Venenum: she seeks out enemies and fights them, in melee or with a ranged weapon.
+- With Search and Destroy active, the button uses that mod's own setting.
+
+THE FAIRY'S VOICE
+
+The fairy can speak during important stages of Venenum and Psychic Delirium.
+
+- There are ten possible lines for each moment.
+- Lines can reference their lover, parents, children, siblings, friends, best friend, colony, time spent there, or personal memories.
+- A line only appears when that person or memory actually exists.
+- Fairy's Gate: the fairy is warned that using it means certain death with nothing left to resurrect. Her mood, and the people she loves, decide whether she accepts.
+- A fairy who refuses won't be asked again for 60 days, and won't call on Venenum until her heat has cooled and her delirium has passed. A willing fairy says her last words before opening the Gate.
+- At 90% Delirium, Scarborough Fair begins to play.
+- At 100% Delirium, the game pauses for one final broken farewell.
+
+REQUIREMENTS
+
+- Biotech: required.
+- Royalty: optional; adds psylink support and uses psychic heat.
+- Harmony: required.
+
+COMPATIBILITY
+
+- CE compatible
+- Safe to add and remove.
+
+CREDITS
+
+- Faeris
+  </description>
+</ModMetaData>
